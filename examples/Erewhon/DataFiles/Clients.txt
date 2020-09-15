@@ -1,0 +1,20 @@
+Pauline Wild	24c Dryside Place	Christchurch	New Zealand	wild@more.co.nz	64 3 834 7172	64 3 923 1010	null
+Brian Olsen	2834 The Palace	San Diego	United States of America	bo@wol.com 	1 2 3848 8384	64 2 2930 9393	www.wol/olsen.com
+Christine Montgomery	19 Pine Lane	London	England	monty@polo.co.uk	44 3 9292 9293	44 3 9023 0193	null
+Elaine Lee	273 Mt Fuji Rise	Nagano	Japan	elaine@lee.co.jp	81 8 7463 8282	81 8 7273 1822 	www.lee.co.jp
+David Russel	93 Oxford Terrace	Christchurch	New Zealand	russel@more.co.nz	64 3 828 2828	64 3 392 9393	www.more/russel.co.nz
+Sarah Bailey	17 Lake Crescent	Queenstown	New Zealand	sarah@smallfoot.com	64 3 845 1929	64 3 838 2828	null
+Howard Ellis	73a Kinsley Meadow	Bristol	England	howy@thebeach.com	44 2 8484 8182	44 2 8182 8283	www.thebeach.com
+Sean Hill	18283 Evely Place	San Francisco	United States of America	seanhill@smalltoe.com	1 7 3747 3848	1 7 2873 2838	null
+Peggy Simpson	19d Evergreen Terrace	Alberta	Canada	peggy@home.com	4 2 8282 9292	4 2 9293 1023	null
+Roger Boeing	167 Wingtip Road	Canberra	Australia	rog@fly.com.au	61 4 8283 8939	61 4 3746 9274	www.fly.com.au
+Philip Jenkins	736 Amroth Street	Llanelli	Wales	pjenkins@yippee.com	44 2920 444 233	44 2920 534 242	null
+Barbara Montenegro	6742 Cape Road	Durban	South Africa	babs@smallfoot.com	27 31 254 6258	27 31 565 0014	null
+Christine Ronaldo	332 Rio Grande Drive	Recife	Brazil	cron@bol.com	55 21 524 6542	55 21 665 856	www.bol/cron.com
+Andrew Fitzpatrick	44c The Terrace	Auckland	New Zealand	afitzp@more.co.nz	64 4 254 6584	64 4 210 3256	www.more/afitzp.co.nz
+Levi Muir	7416 Sandbag Place	Casa Blanca	Morocco	levi@mol.com	212 2548 2154	212 2658 2145	null
+Peter Morrissey	2 The Square	London	England	peterm@tobuy.co.uk	44 81 5486 5478	44 81 4120 2135	www.tobuy.co.uk
+Barry Ogen	33c Cascade Drive	Denver	United States of America	barry@smalltoe.com	1 2 5486 6985	1 2 6458 2478	null
+Heather Bisset	182 Needle Rise	Victoria	Canada	hbisset@yippee.com	1 8 6589 6541	1 8 2458 9712	www.needle.com
+Jane Phillippe	5 Armani Belt	Naples	Italy	jphillippe@eol.com	39 91 254 3652 	39 91 215 3215	null
+Christopher Burke	876 Wallaby Road	Tasmania	Australia	burke@home.com	61 6 5482 2145	61 6 5486 2145	null

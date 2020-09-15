@@ -1,0 +1,35 @@
+version: "3.4"
+services:
+
+  jade-rap:
+    image: jade-database-server:20.0.00-x64-U
+    volumes:
+      - c:\jade\system:C:\system
+      - c:\jade\journals:C:\journals
+      - c:\jade\logs:C:\logs
+    ports:
+      - "9901:9901"
+    networks:
+      - jade-net
+    build:
+      context: ../jade-database-server
+      dockerfile: ./Dockerfile
+
+  jade-app-server:
+    image: jade-app-server:20.0.00-x64-U
+    depends_on: 
+      - jade-rap
+    volumes:
+      - c:\jade\logs:C:\logs
+    ports:
+      - "443:9907"
+    networks:
+      - jade-net
+    build:
+      context: ../jade-app-server
+      dockerfile: ./Dockerfile
+
+networks:
+  jade-net:
+    external:
+      name: nat

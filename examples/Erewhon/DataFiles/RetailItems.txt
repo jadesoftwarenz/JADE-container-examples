@@ -1,0 +1,58 @@
+ANQU2001	Lamp	Purchase this rare stained glass piece from the early 14th century.	lamp.jpg	250	October 1 1999	Hank Williams	USA	Connecticut	Antiques
+ANQU2002	Chair	Be in quick to own the chair Mona Lisa sat in for her portrait.	chair.jpg	300	November 1 1999	Angela Bettersfield	UK	Sussex	Antiques
+DEST0001	Africa Diving	Reef diving in South Africa.	africadiving.jpg	1299	September 12 1999	Peter Smallsmith	Africa	South Africa	Holidays
+DEST0002	Africa Safari	On safari with the wild animals of South Africa.	africasafari.jpg	2500	September 20 1999	Peter Smallsmith	Africa	South Africa	Holidays
+DEST0003	Bali Treks	Trek through the expansive rainforests of Bali.	baliwalking.jpg	1600	September 15 1999	Airi Hamada	Asia	Bali	Holidays
+DEST0004	Bungy Jumping	Be part of this radical sport at its birthplace.	bungy.jpg	3500	October 7 1999	Peter Smallsmith	New Zealand	Otago	Holidays
+DEST0005	Rock Climbing	Be wowed by the most breathtaking climbing in the world.	colorado.jpg	2600	November 22 1999	Hank Williams	USA	Los Angeles	Holidays
+DEST0006	Pyramid Visits	See these magical tombs in Egypt by night.	egypt05large.jpg	4999	November 2 1999	Suzie Wu	Africa	Egypt	Holidays
+DEST0007	Mediterranean Cruises	Sail to enchanting destinations in the Mediterranean sea.	greececruise.jpg	12999	November 16 1999	Hank Williams	Europe	Greece	Holidays
+DEST0008	Goldmining	Strike gold deep in the Balinese jungle.	baligoldmining.jpg	5999	October 9 1999	Angela Bettersfield	Asia	Bali	Holidays
+DEST0009	London Tours	See London by foot with world renowned guides.	big_ben.jpg	8999	October 4 1999	Hank Williams	UK	London	Holidays
+DEST0010	Wine Tours	Sample some of the best wines from the Champagne region of France.	champagne.jpg	9999	September 28 1999	Hank Williams	Europe	France	Holidays
+DEST0011	Greek Tours	Spend two days travelling to Greek islands such as Corfu.	corfu.jpg	12999	September 21 1999	Petra Petrovski	Europe	Greece	Holidays
+DEST0012	Italian Homestays	Live-in at these quaint Italian villages.	crestet.jpg	6999	September 19 1999	Pierre Lafayette	Europe	Italy	Holidays
+DEST0013	Ancient Ruins	Visit the ruins of Crete.	crete.jpg	7599	November 3 1999	Angela Bettersfield	Europe	Greece	Holidays
+DEST0014	French Country Tours	Amble through the French countryside.	france.jpg	8300	October 2 1999	Hank Williams	Europe	France	Holidays
+DEST0015	Egyptian Tomb Tours	Explore the mysterious world of the Egyptian tombs.	egypt.jpg	6599	November 22 1999	Suzie Wu	Africa	Egypt	Holidays
+DEST0016	New York By Night	Travel around New York by night and by helicopter.	empirestate.jpg	8995	September 9 1999	Petra Petrovski	USA	New York	Holidays
+DEST0017	Cycle Tours	See New Zealand's endless countryside by cycle.	farmers.jpg	6520	November 14 1999	Hank Williams	New Zealand	Canterbury	Holidays
+DEST0018	Fishing	Fish the traditional way in the natural splendour of Thailand.	fishingthai.jpg	3500	November 8 1999	Angela Bettersfield	Asia	Thailand	Holidays
+DEST0019	Hong Kong By Night	See one of the world's most electric cities by night.	hknight.jpg	4599	October 3 1999	Pierre Lafayette	Asia	Hong Kong	Holidays
+DEST0020	Italy	Become a part of Italy's rich heritage.	italy.jpg	5999	September 23 1999	Hank Williams	Europe	Italy	Holidays
+DEST0021	Casino Trips	Gamble at some of Macau's best casinos.	macaucasino.jpg	4500	November 8 1999	Peter Smallsmith	Asia	Macau	Holidays
+DEST0022	Hiking	Hike through the pristine New Zealand native bush.	hiking.jpg	3995	October 4 1999	Angela Bettersfield	New Zealand	Otago	Holidays
+DEST0023	Surfing	Surf the famous point break off Maui.	mauisurfing.jpg	5995	September 29 1999	Angela Bettersfield	USA	Hawaii	Holidays
+DEST0024	Southern France	Cycle the back roads of Provence.	provence.jpg	3995	November 26 1999	Pierre Lafayette	Europe	France	Holidays
+DEST0025	Golf By The Sea	Play the finest golf course in Phuket.	puketgolf.jpg	2995	October 8 1999	Suzie Wu	Asia	Thailand	Holidays
+DEST0026	Canyoning	Experience the extreme sport of canyoning in Slovenia.	canyoning.jpg	1995	September 2 1999	Angela Bettersfield	Europe	Slovenia	Holidays
+DEST0027	Skiing	Stay in luxury at the famous Austrian winter resort of St Anton.	board011.jpg	6995	September 30 1999	Hank Williams	Europe	Austria	Holidays
+DEST0028	Island Hideaways	Have your own deserted island in Thailand.	thaibeachnight.jpg	7995	November 19 1999	Petra Petrovski	Asia	Thailand	Holidays
+ANQU3001	Diamond Ring	32ct diamond cluster ring, rare and exquisite.	ring-diamond.jpg	3500	October 2 1999	Tabai Tanivula	Europe	Greece	Antiques
+ANQU3002	Wedding Ring	This diamond and gold ring will take your breath away.	ring-diagold.jpg	8399	October 4 1999	Airi Hamada	Africa	Egypt	Antiques
+ANQU3003	Male Band Ring	Pre-European generals wore this ring as a sign of valour and prestige.	ring.jpg	1990	November 2 1999	Tabai Tanivula	USA	New England	Antiques
+ANQU3004	Plate Set	Victorian originals finished in 18ct gold.	plateset.jpg	4600	September 22 1999	Suzie Wu	Africa	South Africa	Antiques
+ANQU3005	Perfume Holder	Elegant and of exceptional quality, a must for collectors.	perfume.jpg	750	October 5 1999	Pierre Lafayette	USA	Washington State	Antiques
+ANQU3006	Painting	This piece depicts early French life in wonderful water colour.	paintfrench.jpg	1150	November 23 1999	Petra Petrovski	Europe	France	Antiques
+ANQU3007	Oil Painting	A landscape, depicting the New Zealand mountain farming region.	painitng.jpg	1550	September 28 1999	Hank Williams	New Zealand	Otago	Antiques
+ANQU3008	Ornamental Plates	Handcrafted with vibrant colour, this set will brighten anyone's room.	oliveplates.jpg	650	December 12 1999	Peter Smallsmith	Europe	Slovenia	Antiques
+ANQU3009	Choker Necklace	Black pearls strung with silk, this piece is absolutely magnificent.	choker.jpg	6500	October 7 1999	Angela Bettersfield	Europe	Italy	Antiques
+DEST0029	Beach Paradise	Enjoy countless water sports or simply relax on the white sands of the closest thing to paradise.	palmbch3.jpg	4995	October 6 1999	Peter Smallsmith	Asia	Bali	Holidays
+DEST0030	Extreme Skiing	Ski untracked snow, on mountains never visited by man before, with the help of experienced guides.	mute.jpg	6999	September 29 1999	Tabai Tanivula	New Zealand	Canterbury	Holidays
+DEST0031	Deer Hunting	Hunt wild game in the most remote locations with the world's best game hunters.	biggame-3.jpg	7995	October 3 1999	Petra Petrovski	Africa	South Africa	Holidays
+PROP2001	Island  	Be quick to buy this never before advertised island in the Pacific Ocean. 200 acres of lush vegetation and it includes an airstrip.	beach1.jpg	6500000	October 8 1999	Hank Williams	USA	Hawaii	Properties
+PROP2002	Island Resort	Purchase a highly successful business in one of the most beautiful places on earth.	aerials.jpg	4200000	November 11 1999	Pierre Lafayette	Europe	Greece	Properties
+PROP2003	Jungle Hideaway	Live in complete privacy and luxury miles from civilisation. Land includes helipad, satellite television and internet connections.	sandsea6.jpg	6250000	December 3 1999	Suzie Wu	Asia	Thailand	Properties
+DEST0036	Salmon Fishing 	Catch some of the biggest salmon known to man on this week-long excursion of a lifetime.	fish3sm.jpg	4995	October 3 1999	Airi Hamada	UK	Northampton	Holidays
+DEST0032	Loch Water Tours	Sail around the lochs of Scotland, taking time to catch up with the famous 'monster' at Loch Ness.	anb_1_sm.jpg	3599	September 27 1999	Pierre Lafayette	UK	Scotland	Holidays
+PROP2004	Famed House	Avoid the hoards at an auction by purchasing Lord Byron's original residence.	fulltoft.jpg	3200000	November 9 1999	Angela Bettersfield	Europe	France	Properties
+PROP2005	Colonial House	Have your very own piece of culture by purchasing this traditional English colonial meeting house.	ellinge.jpg	4500000	October 6 1999	Petra Petrovski	New Zealand	Marlborough	Properties
+DEST0033	Ballooning	Take the trip of a lifetime over the wonderful English countryside.	balloning.jpg	3999	October 11 1999	Hank Williams	UK	Essex	Holidays
+DEST0034	Beach Getaway	This all inclusive holiday will have your every need attended to in surroundings that will make you never want to leave.	aruba.jpg	8999	October 9 1999	Angela Bettersfield	New Zealand	Auckland	Holidays
+DEST0035	Rock Climbing	Adventure lovers will jump at this opportunity to climb some of the most challenging rock faces known to man.	rockclimber.jpg	5995	September 2 1999	Suzie Wu	USA	Washington State	Holidays
+ANQU4001	Stamps	These collectors items date back to the early settlement and are in immaculate condition.	stamps.jpg	350	October 1 1999	Petra Petrovski	USA	Los Angeles	Antiques
+ANQU4002	Rimu table	A bed side table used by an early conqueror has been put up for immediate sale. Surely a must have for collectors of fine furniture.	table1.jpg	699	September 22 1999	Hank Williams	UK	Essex	Antiques
+ANQU4003	Tricycle	Own your own Edwardian period transportation curio. This steel tricycle has been restored to perfect working order.	tricycle.jpg	499	October 5 1999	Airi Hamada	USA	Los Angeles	Antiques
+ANQU4004	Wash Jug	A handcrafted piece that was used in Egyptian washing ceremonies.	washjug.jpg	350	October 9 1999	Tabai Tanivula	Europe	Austria	Antiques
+ANQU4005	Silver Spurs	These fourth generation silver riding spurs were worn by generals when in battle.	spurs.jpg	450	November 1 1999	Pierre Lafayette	UK	London	Antiques
+ANQU4006	Rock Carvings	A piece of rock with ancient carvings will put any historical collector in awe.	handprints.jpg	1150	October 1 1999	Angela Bettersfield	UK	Oxford	Antiques

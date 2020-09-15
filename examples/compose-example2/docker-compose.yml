@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+
+  jade-rap:
+    image: ${Registry:-}${RepoPrefix:-}jade-database-server:${Tag:-20.0.00-x64-U}
+    volumes:
+      - ${DatabasePath:-c:\jade\system}:c:\system
+      - ${JournalPath:-c:\jade\journals}:c:\journals
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "${RapListenPort:-9901}:9901"
+    networks:
+      - jade-net
+
+  jade-app-server:
+    image: ${Registry:-}${RepoPrefix:-}jade-app-server:${Tag:-20.0.00-x64-U}
+    depends_on: 
+      - jade-rap
+    volumes:
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "${AppServerListenPort:-443}:9907"
+    networks:
+      - jade-net
+
+  jade-client:
+    image: ${Registry:-}${RepoPrefix:-}jade-client:${Tag:-20.0.00-x64-U}
+    depends_on: 
+      - jade-rap
+    volumes:
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    networks:
+      - jade-net
+
+networks:
+  jade-net:
+    external:
+      name: nat
