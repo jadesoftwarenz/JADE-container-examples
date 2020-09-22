@@ -1,3 +1,3 @@
 Push-Location $PSScriptRoot
-docker-compose down
+docker stack rm jadestack
 Pop-Location

@@ -1,6 +1,6 @@
 $rootPath = Split-Path (Split-Path $PSScriptRoot)
 $configDirectory = $rootPath + "\config\"
-$globalConfig = $configDirectory + "config.ps1"
+$globalConfig = $configDirectory + "build-config.ps1"
 $tool = "jadclient.exe"
 $dataDirectory = "$PSScriptRoot\DataFiles"
 

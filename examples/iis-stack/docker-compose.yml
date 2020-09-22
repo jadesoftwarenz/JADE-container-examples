@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  iis:
+    image: mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+    networks:
+      - iisnet
+    ports:
+      - "8070:80"
+
+networks:
+  iisnet:
+    driver: overlay
+

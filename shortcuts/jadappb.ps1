@@ -1,6 +1,6 @@
 $rootPath = (Split-Path $PSScriptRoot)
 $configDirectory = $rootPath + "\config\"
-$globalConfig = $configDirectory + "config.ps1"
+$globalConfig = $configDirectory + "run-config.ps1"
 $tool = "jadappb.exe"
 
 # source global configuration

@@ -1,0 +1,14 @@
+version: '3.3'
+
+networks:
+  mynet:
+    driver: overlay
+    attachable: true
+
+services:
+  iis:
+    image: mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+    networks:
+    - mynet
+    ports:
+    - "8090:80"

@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+
+  jade-rap:
+    image: jaderegistry.azurecr.io/jade-database-server:20.0.00-x64-U
+    volumes:
+      - c:\jade\system:C:\system
+      - c:\jade\journals:C:\journals
+      - c:\jade\logs:C:\logs
+    ports:
+      - "9901:9901"
+    networks:
+      - jade-net
+
+  jade-gui:
+    image: jade-gui-client:20.0.00-x64-U
+    depends_on: 
+      - jade-rap
+    volumes:
+      - c:\jade\logs:C:\logs
+    networks:
+      - jade-net
+
+networks:
+  jade-net:
+    external:
+      name: nat
