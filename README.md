@@ -1,10 +1,8 @@
-# jade-infrastructure
+# JADE-container-examples
 
 ## Overview
 
-This repository contains the sources to build and deploy JADE containers images. JADE container images are based on a version of the [Windows Server Core Base Image](https://hub.docker.com/_/microsoft-windows-servercore).
-
-Windows container base images are discoverable through Docker Hub. The Windows container base images themselves are served from the [Microsoft Container Registry](https://azure.microsoft.com/en-us/services/container-registry/) (MCR).
+This example repository contains various examples that show how to use JADE containers to stand up a variety of application environments. Each example has a README that explains how to deploy and run the example in a step-wise fashion as well as a single script that can be run to deploy a fully operational example environment on a laptop, PC, bare metal server or in the cloud.The repository also contains documentation on how to get started using Docker Desktop for Windows and provides a script to automate the setup process
 
 ## Getting Started
 
