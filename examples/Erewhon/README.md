@@ -15,7 +15,7 @@ If this is your first time using containers on your computer, you will need to p
 
     TODO 23/09/2020 : Change these instructions when the repo name is finalised.
 
-- Follow the instructions in the [JADE Container Examples readme](/README.md).
+- Follow the [Getting Started](/Documentation/getting-started.md) guide.
 - Run the __setup-container-environment.ps1__ script from the __/scripts/__ folder.
 
 ## Authenticate yourself to the Azure Registry
