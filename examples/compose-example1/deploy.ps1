@@ -1,10 +1,10 @@
 # set environment variables used in compose yaml
-$env:Registry = "jaderegistry.azurecr.io/"
-$env:RepoPrefix = "jade/"
-$env:Tag = "20.0.00-x64-U"
-$env:DatabasePath = "c:\jade\system"
-$env:JournalPath = "c:\jade\journals"
-$env:LogPath = "c:\jade\logs"
+$env:Registry = $registry
+$env:RepoPrefix = $repoPrefix
+$env:Tag = $jadeVersion + "-x64-U"
+$env:DatabasePath = $jadeDatabaseDirectory
+$env:JournalPath = $jadeJournalRootDirectory
+$env:LogPath = $jadeLogDirectory
 $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
 
