@@ -8,7 +8,7 @@ This example repository contains various examples that show how to use JADE cont
 
 [Getting Started](./Documentation/getting-started.md)
 
-[Erewhon Example 1 - Deploying a Database and Single Application Server](./Erewhon/README.md)
+[Erewhon Example 1 - Deploying a Database and Single Application Server](./Examples/Erewhon/README.md)
 
 ## License
 
