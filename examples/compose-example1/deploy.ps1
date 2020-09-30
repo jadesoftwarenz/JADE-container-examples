@@ -1,3 +1,9 @@
+$rootPath = Get-Location
+$configDirectory = $rootPath.Path + "\..\..\config"
+$config = $configDirectory + "\run-config.ps1"
+# source configuration
+. ($config)
+
 # set environment variables used in compose yaml
 $env:Registry = $registry
 $env:RepoPrefix = $repoPrefix

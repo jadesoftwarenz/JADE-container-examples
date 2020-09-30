@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   jade-rap:
-    image: ${Registry:-}/${RepoPrefix:-}/jade-database-server:${Tag:-20.0.00-x64-U}
+    image: ${Registry:-}/${RepoPrefix:-}/database-server:${Tag:-20.0.00-x64-U}
     volumes:
       - ${DatabasePath:-c:\jade\system}:c:\system
       - ${JournalPath:-c:\jade\journals}:c:\journals
@@ -12,7 +12,7 @@ services:
       - jade-net
 
   jade-app-server:
-    image: ${Registry:-}/${RepoPrefix:-}/jade-app-server:${Tag:-20.0.00-x64-U}
+    image: ${Registry:-}/${RepoPrefix:-}/application-server:${Tag:-20.0.00-x64-U}
     depends_on: 
       - jade-rap
     volumes:
