@@ -1,13 +1,12 @@
-param(    
-      [string] $config = 'U'
+param(         
+      [string] $config = 'U' # Unicode by default, 'A' => ANSI 
 )
   
 $rootPath = (Split-Path $PSScriptRoot)
 $configDirectory = $rootPath + "/config/"
 
-
 # build artifact locations
-$buildResultsDir = "\\cnwchcm6\cnwjdcdev\DailyResults\jade99000\20200929_001"
+$buildResultsDir = "\\cnwchcm6\cnwjdcdev\DailyResults\jade99000\20201005_001"
 $buildResultsUnicodeBinDir = "$buildResultsDir\x64-msoft-win64\Release_Unicode\bin"
 $buildResultsAnsiBinDir = "$buildResultsDir\x64-msoft-win64\Release_Ansi\bin"
 $dbSourceDirectory = "$buildResultsDir\i686-msoft-win32\"

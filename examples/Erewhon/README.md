@@ -13,20 +13,8 @@ This script will create a dedicated JADE database for use with the demo, so you 
 
 If this is your first time using containers on your computer, you will need to perform the initial setup for the container environment. To do so, you can do either of the following:
 
-    TODO 23/09/2020 : Change these instructions when the repo name is finalised.
-
 - Follow the [Getting Started](/Documentation/getting-started.md) guide.
 - Run the __setup-container-environment.ps1__ script from the __/scripts/__ folder.
-
-## Authenticate yourself to the Azure Registry
-
-    TODO 23/09/2020 : Change these instructions when we have the public registry.
-
-You must authenticate yourself before you can fetch the images from the JADE registry on Azure. 
-
-- To authenticate yourself, from an admin PowerShell, run:
-
-> docker login jaderegistry.azurecr.io --username 81dc3ac3-6b53-48f5-88fb-cbbe6f792b8c --password f4e27377-4c38-44c5-ab44-9523d6d73fe6
 
 ## Set up a physical JADE Database
 
@@ -60,10 +48,15 @@ To start the database and application servers:
 - Run the __deploy.ps1__ script from the __/examples/compose-example1/__ folder.
 
 You may want to verify that the database and application server containers are running. To do so, from a PowerShell, run:
+__docker-compose ps__. You should see two containers running.
 
-> Docker ps
-
-You should see two containers running.
+```powershell
+> docker-compose ps
+               Name                             Command                  State               Ports
+-----------------------------------------------------------------------------------------------------------
+compose-example1_jade-app-server_1   c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:443->9907/tcp
+compose-example1_jade-rap_1          c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:9901->9901/tcp
+```
 
 ## Load the Erewhon schemas
 
@@ -104,20 +97,10 @@ If you had a JADE database created for use with this demo, either by running the
 
 To do the same process as the __remove-images.ps1__ script manually, you can perform the following steps.
 
-- To stop the running app and database servers, from an admin PowerShell, run:
+> docker-compose down
 
-> docker stop compose-example1_jade-app-server_1
+- The containers are now stopped and removed. However, there are still container images saved on your computer. If you want to remove these also, from an admin PowerShell, run:
 
-> docker stop compose-example1_jade-rap_1
+> docker rmi jaderegistry.azurecr.io/jade/application-server:20.0.00-x64-U
 
-- The containers are now stopped but not yet removed. To remove them, from an admin PowerShell, run:
-
-> docker rm compose-example1_jade-app-server_1
-
-> docker rm compose-example1_jade-rap_1
-
-- The containers are now removed. However, there are still container images saved on your computer. If you want to remove these also, from an admin PowerShell, run:
-
-> docker rmi jaderegistry.azurecr.io/jade/jade-app-server:20.0.00-x64-U
-
-> docker rmi jaderegistry.azurecr.io/jade/jade-database-server:20.0.00-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/database-server:20.0.00-x64-U

@@ -1,5 +1,5 @@
 # Creates a new Azure Active Directory service principal with permissions to access a specified
-# Azure Container Registry using Azure Powershell cmlets 
+# Azure Container Registry using Azure Powershell cmdlets 
 #
 $registryName = "jadeRegistry"
 $resourceGroup = "containerResourceGroup-EAU"
