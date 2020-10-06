@@ -75,11 +75,9 @@ You may like to try any of the following.
 
 - You can start a thin client IDE using the __thin-client-ps1__ script in the __/shortcuts/__ folder.
 - You can start the Erewhon Shop using the __run-erewhon-shop.ps1__ script in the __/examples/Erewhon/__ folder.
-- You can display logs for the container, including the jommsg.log and the windows event log. To do this, from a PowerShell, run one of the following:
+- You can display logs from both containers, including events written to the  jommsg log and the windows event log. To do this, from a PowerShell, run:
 
-> docker logs compose-example1_jade-app-server_1
-
-> docker logs compose-example1_jade-rap_1
+> docker-compose logs
 
 ## Cleanup
 
