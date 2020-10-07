@@ -1,29 +1,26 @@
 param(         
-      [string] $config = 'U' # Unicode by default, 'A' => ANSI 
+      [string] $config = 'Unicode' 
 )
   
 $rootPath = (Split-Path $PSScriptRoot)
 $configDirectory = $rootPath + "/config/"
 
-# build artifact locations
-$buildResultsDir = "\\cnwchcm6\cnwjdcdev\DailyResults\jade99000\20201005_001"
-$buildResultsUnicodeBinDir = "$buildResultsDir\x64-msoft-win64\Release_Unicode\bin"
-$buildResultsAnsiBinDir = "$buildResultsDir\x64-msoft-win64\Release_Ansi\bin"
-$dbSourceDirectory = "$buildResultsDir\i686-msoft-win32\"
-$sourceAnsiDbDirectory = "$dbSourceDirectory\systema"
-$sourceUnicodeDbDirectory = "$dbSourceDirectory\systemu"
-
 . ($configDirectory + "run-config.ps1")
 
-if ($config = 'U') {
-      $dbKind = "Unicode"
-      $sourceDbDir = $sourceUnicodeDbDirectory
-      $sourceBinDir = $buildResultsUnicodeBinDir
+$binaryRepoDirectory = "$rootPath/binaryRepo"
+$binArchive = "$binaryRepoDirectory/JADE-$jadeVersion-x64-$config-binaries.zip"
+$dbArchive = "$binaryRepoDirectory/JADE-$jadeVersion-$config-db.zip"
+
+if (!(Test-Path $binArchive -PathType leaf)) {
+      # TODO Insert auto download from jadeworld site
+      Write-Host "$binArchive not found, download from jadeworld when URL is published"
+      Exit 1
 }
-else {
-      $dbKind = "ANSI"
-      $sourceDbDir = $sourceAnsiDbDirectory
-      $sourceBinDir = $buildResultsAnsiBinDir
+
+if (!(Test-Path $dbArchive -PathType leaf)) {
+      # TODO Insert auto download from jadeworld site
+      Write-Host "$dbArchive not found, download from jadeworld when URL is published"
+      Exit 1
 }
 
 $startTime = Get-Date 
@@ -47,11 +44,11 @@ if (!(Test-Path $jadeJournalRootDirectory)) {
 
 if (!(Test-Path "$jadeDatabaseDirectory\*")) {
       Write-Host "Initializing $dbKind database in directory: $jadeDatabaseDirectory..."
-      RoboCopy $sourceDbDir $jadeDatabaseDirectory *.dat /MIR
+      Expand-Archive $dbArchive -DestinationPath $jadeDatabaseDirectory
 }
 
-RoboCopy $sourceBinDir $jadeBinDirectory *.exe *.dll /MIR
-RoboCopy $sourceDbDir $jadeBinDirectory *.bin 
+Expand-Archive $binArchive -DestinationPath $jadeBinDirectory
+
 Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
 
 Write-Host "Initialization of host resident database complete. Time elapsed:" $($(Get-Date) - $startTime) -ForegroundColor Yellow
