@@ -7,7 +7,7 @@ This script will create a dedicated JADE database for use with the demo, so you 
 
 - Modify the __run-config.ps1__ script in the __/config/__ folder:
   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
-- You can now run the __run-demo.ps1__ script from the __/examples/Erewhon/__ folder.
+- You can now run the __deploy-demo.ps1__ script from the __/examples/Erewhon/__ folder.
 
 ## Set up your container environment
 

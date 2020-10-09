@@ -24,7 +24,7 @@ if (!(Test-Path $dbArchive -PathType leaf)) {
 }
 
 $startTime = Get-Date 
-Write-Host "Initializating initial database on container host: $hostName." -ForegroundColor Blue
+Write-Host "Installing an empty $config database and client binaries on container host: $hostName." -ForegroundColor Blue
 
 if (!(Test-Path $jadeRootDirectory)) {
       New-Item -ItemType Directory -Force -Path $jadeRootDirectory
@@ -42,12 +42,16 @@ if (!(Test-Path $jadeJournalRootDirectory)) {
       New-Item -ItemType Directory -Force -Path $jadeJournalRootDirectory
 }
 
-if (!(Test-Path "$jadeDatabaseDirectory\*")) {
-      Write-Host "Initializing $dbKind database in directory: $jadeDatabaseDirectory..."
-      Expand-Archive $dbArchive -DestinationPath $jadeDatabaseDirectory
+if ((Test-Path "$jadeDatabaseDirectory\_control.dat" -PathType leaf)) {
+      Write-Host "_control.dat found in directory: $jadeDatabaseDirectory" -ForegroundColor Magenta
+      Write-Host "Database install step skipped"
+} else {
+      Expand-Archive $dbArchive -DestinationPath $jadeDatabaseDirectory -Force
+      Write-Host "Empty $config database installed in directory: $jadeDatabaseDirectory..."
 }
 
-Expand-Archive $binArchive -DestinationPath $jadeBinDirectory
+Expand-Archive $binArchive -DestinationPath $jadeBinDirectory -Force
+Write-Host "Client binaries installed in directory: $jadeBinDirectory"
 
 Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
 
