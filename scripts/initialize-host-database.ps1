@@ -31,7 +31,7 @@ function DownloadFile {
       }
       catch {
             Write-Host $error -ForegroundColor red
-            Write-Host "$dest downloaded failed." -ForegroundColor red
+            Write-Host "$dest download failed." -ForegroundColor red
             Exit 1 
       }
 }
