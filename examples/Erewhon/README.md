@@ -11,7 +11,7 @@ This script will create a dedicated JADE database for use with the demo, so you 
 
 ## Set up your container environment
 
-If this is your first time using containers on your computer, you will need to perform the initial setup for the container environment. To do so, you can do either of the following:
+If this is your first time using Docker containers on your computer, you will need to perform the initial setup for the container environment. To do so, you can do either of the following:
 
 - Follow the [Getting Started](/Documentation/getting-started.md) guide.
 - Run the __setup-container-environment.ps1__ script from the __/scripts/__ folder.
@@ -21,18 +21,21 @@ If this is your first time using containers on your computer, you will need to p
 You will need JADE database, log, and journal files to associate with the container so changes to the database and logs are stored persistently outside the container.
 You can either use an existing JADE database, or you can have one generated for you.
 
-__If you want to use your existing database__
+### If you want to use your existing database
 
 - Modify the __run-config.ps1__ script in the __/config/__ folder:
   - Set the __$jadeRootDirectory__ variable to the path of your JADE install directory.
   - If your database directory is called something other than "system", set the __$jadeDatabaseDirectory__ variable as required.
   - Set the __$jadeJournalRootDirectory__ variable to the directory where your journals are saved.
   - If your JADE ini file is called something other than __system.ini__, set the __$iniFile__ variable to the name of your JADE ini file.
-
-__If you want to use a generated database__
+  
+### If you want to use a generated database
 
 - Modify the __run-config.ps1__ script in the __/config/__ folder:
   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
+  - Update licence information (a default free licence key is provided)
+    - Set the __$regName__ variable to the company name associated with your licence
+    - Set the __$regKey__ variable to your assigned licence key
 
 - Run the __initialize-host-database.ps1__ script from the __/scripts/__ folder. This will generate the following into the folder specified in the __$jadeRootDirectory__ variable of the __run-config.ps1__ script.
   - A __bin__ folder, with the required .bin, .dll, and executable files.
@@ -81,13 +84,13 @@ You may like to try any of the following.
 
 ## Cleanup
 
-When you're finished with your containers, you may want to stop and remove the containers and remove the container images.
+When you're finished experimenting with Erewhon, you may want to stop the application and optionally remove the container images.
 
-To stop and remove the containers but keep the container images:
+To stop the Erewhon Application (stops and removes the containers):
 
 - Run the __stop.ps1__ script from the __/examples/Erewhon/__ folder.
 
-To stop and remove the containers and the container images:
+To remove the container images:
 
 - Run the __remove-images.ps1__ script from the __/examples/Erewhon/__ folder.
 
@@ -99,6 +102,6 @@ To do the same process as the __remove-images.ps1__ script manually, you can per
 
 - The containers are now stopped and removed. However, there are still container images saved on your computer. If you want to remove these also, from an admin PowerShell, run:
 
-> docker rmi jaderegistry.azurecr.io/jade/application-server:20.0.00-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/application-server:20.0.01-x64-U
 
-> docker rmi jaderegistry.azurecr.io/jade/database-server:20.0.00-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/database-server:20.0.01-x64-U

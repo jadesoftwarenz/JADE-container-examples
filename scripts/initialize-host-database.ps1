@@ -35,6 +35,21 @@ function DownloadFile {
             Exit 1 
       }
 }
+function ApplyLicence { 
+      param (
+            [string]$name, 
+            [string]$key
+      )
+      $arguments = "path=$jadeDatabaseDirectory ini=$jadeRootDirectory\system.ini " +
+      "jadelog.logdirectory=$jadelogDirectory jadelog.logfile=jadregb name='$name' key='$key'"
+      $proc = (Start-Process -FilePath $jadeBinDirectory/jadregb.exe -ArgumentList $arguments -PassThru -Wait -NoNewWindow)
+      if ($proc.ExitCode -ne 0)
+      {
+            $result = $proc.ExitCode
+            Write-Host "Licence operation failed, error code=$result" -ForegroundColor red
+            Exit 1 
+      }
+}
 
 $startTime = Get-Date 
 Write-Host "Installing an empty $config database and client binaries on container host: $hostName." -ForegroundColor Yellow
@@ -77,6 +92,9 @@ try {
       Write-Host "Client binaries installed in directory: $jadeBinDirectory"
       
       Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
+
+      # Apply licences
+      ApplyLicence -name $regName -key $regKey1 
       
       Write-Host "Initialization of host resident database complete. Time elapsed:" $($(Get-Date) - $startTime) -ForegroundColor Yellow
 }
