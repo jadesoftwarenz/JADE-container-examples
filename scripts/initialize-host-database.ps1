@@ -85,6 +85,8 @@ try {
       }
       else {
             Expand-Archive $localDbArchive -DestinationPath $jadeDatabaseDirectory -Force
+            # Apply licences
+            ApplyLicence -name $regName -key $regKey1 
             Write-Host "Empty $config database installed in directory: $jadeDatabaseDirectory..."
       }
       
@@ -92,10 +94,7 @@ try {
       Write-Host "Client binaries installed in directory: $jadeBinDirectory"
       
       Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
-
-      # Apply licences
-      ApplyLicence -name $regName -key $regKey1 
-      
+  
       Write-Host "Initialization of host resident database complete. Time elapsed:" $($(Get-Date) - $startTime) -ForegroundColor Yellow
 }
 catch {

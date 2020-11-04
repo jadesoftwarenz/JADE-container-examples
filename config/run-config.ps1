@@ -13,8 +13,7 @@ $jadeDatabaseDirectory = $jadeRootDirectory + "\system"
 $jadeJournalRootDirectory = $jadeRootDirectory + "\journals"
 $iniFile = "system.ini"
 
-# TODO replace registry with public shared registry when available
-$registry = "jaderegistry.azurecr.io"
+$registry = "registry.jadeworld.io"
 $repoPrefix = "jade"
 
 # Default Free Licence key - Change settings to use your own site or personal key
