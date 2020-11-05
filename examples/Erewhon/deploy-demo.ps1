@@ -10,6 +10,8 @@ $globalConfig = $configDirectory + "run-config.ps1"
 Write-Host "Deploying Containers..." -ForegroundColor Yellow
 & $PSScriptRoot\..\compose-example1\deploy.ps1
 
+Start-Sleep -Seconds 5
+
 Write-Host "Loading Erewhon schemas..." -ForegroundColor Yellow
 & $PSScriptRoot\loadSchemas.ps1
 
