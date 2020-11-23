@@ -1,0 +1,27 @@
+UK	London
+UK	Sussex
+UK	Northampton
+UK	Oxford
+UK	Scotland
+UK	Essex
+New Zealand	Otago
+New Zealand	Canterbury
+New Zealand	Marlborough
+New Zealand	Auckland
+USA	New England
+USA	Connecticut
+USA	Los Angeles
+USA	New York
+USA	Hawaii
+USA	Washington State
+Africa	South Africa
+Africa	Egypt
+Asia	Thailand
+Asia	Hong Kong
+Asia	Macau
+Asia	Bali
+Europe	Greece
+Europe	France
+Europe	Italy
+Europe	Slovenia
+Europe	Austria
