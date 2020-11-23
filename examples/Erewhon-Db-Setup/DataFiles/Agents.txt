@@ -1,0 +1,8 @@
+Peter Smallsmith	645 Gregan Road	Christchurch	New Zealand	ps@theplace.co.nz	64 3 378 2992	64 3 392 3746	www.theplace.co.nz
+Angela Bettersfield	12b St Michael's Place	London	England	angela@fieldplus.co.uk	44 3 6574 7485	44 3 8574 8394	www.fieldplus.co.uk
+Pierre Lafayette	167 Rue Patisserie	Paris	France	plafayette@champagne.com	33 8 9403 6475	33 8 7463 1102	www.champagne.com
+Hank Williams	9127 Bel Air Drive	Los Angeles	United States of America	hank@it.com	1 8 6354 7364	1 8 2938 4756	www.it.com
+Airi Hamada	145 Tokyo Road	Kyoto	Japan	airi@yippe.co.jp	81 4 2845 6362	81 4 8586 7273	www.yippe.co.jp
+Petra Petrovski	8765 The Parade	Moscow	Russia	petra@here.com	7 3 4857 8182	7 3 8939 8384	www.here.com
+Suzie Wu	26b Colonial Plaza	Singapore	Singapore	suzie@holiday.com	65 7374 9734	65 1837 8234	www.holiday.com
+Tabai Tanivula	14 Suva Street	Suva	Fiji	tabai@mytours.com	679 2662 7327	679 3837 7382	www.mytours.com

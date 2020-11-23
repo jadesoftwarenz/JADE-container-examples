@@ -1,0 +1,15 @@
+Antiques	2
+Antiques	3.5
+Antiques	5
+Antiques	8
+Antiques	12
+Holidays	2
+Holidays	3.5
+Holidays	5
+Holidays	8
+Holidays	12
+Properties	2
+Properties	3.5
+Properties	5
+Properties	8
+Properties	12
