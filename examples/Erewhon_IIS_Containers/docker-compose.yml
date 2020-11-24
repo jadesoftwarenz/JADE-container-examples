@@ -3,21 +3,8 @@
 
 version: "3.8"
 services:
-  jade-rap:
-    image: ${Registry:-}/jade/database-server:${Tag:-20.0.01-x64-U}
-    volumes:
-      - ${DatabasePath:-c:\jade\system}:c:\system
-      - ${JournalPath:-c:\jade\journals}:c:\journals
-      - ${LogPath:-c:\jade\logs}:c:\logs
-    ports:
-      - "${RapListenPort:-9901}:9901"
-    networks:
-      - jade-net
-
   jade-erewhon-webshop:
     image: erewhon-webshop
-    depends_on: 
-      - jade-rap
     volumes:
       - C:\jade\images:c:\temp
       - ${LogPath:-c:\jade\logs}:c:\logs
@@ -28,8 +15,6 @@ services:
 
   jade-erewhon-rest:
     image: erewhon-rest
-    depends_on: 
-      - jade-rap
     volumes:
       - C:\jade\images:c:\temp
       - ${LogPath:-c:\jade\logs}:c:\logs
@@ -40,8 +25,6 @@ services:
   
   jade-iis-server:
     image: iis-server
-    depends_on: 
-      - jade-erewhon-webshop
     volumes:
       - C:\jade\images:c:\temp
     ports:
