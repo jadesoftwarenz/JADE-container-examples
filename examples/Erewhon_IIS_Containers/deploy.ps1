@@ -15,6 +15,10 @@ $env:LogPath = $jadeLogDirectory
 $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
 
+& $PSScriptRoot\build-images.ps1
+
+& $PSScriptRoot\..\db-server-only\deploy.ps1
+
 docker-compose up -d
 
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' erewhon_iis_containers_jade-iis-server_1

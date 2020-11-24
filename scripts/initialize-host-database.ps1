@@ -79,6 +79,9 @@ try {
       if (!(Test-Path $jadeJournalRootDirectory)) {
             New-Item -ItemType Directory -Force -Path $jadeJournalRootDirectory
       }
+      if (!(Test-Path $jadeImagesDirectory)) {
+            New-Item -ItemType Directory -Force -Path $jadeImagesDirectory
+      }
       
       if ((Test-Path "$jadeDatabaseDirectory\_control.dat" -PathType leaf)) {
             Write-Host "_control.dat found in directory: $jadeDatabaseDirectory, database install skipped" -ForegroundColor Green
