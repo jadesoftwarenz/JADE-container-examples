@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  jade-rap:
+    image: ${Registry:-}/jade/database-server:${Tag:-20.0.01-x64-U}
+    volumes:
+      - ${DatabasePath:-c:\jade\system}:c:\system
+      - ${JournalPath:-c:\jade\journals}:c:\journals
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "${RapListenPort:-9901}:9901"
+    networks:
+      - jade-net
+
+networks:
+  jade-net:
+    external:
+      name: nat

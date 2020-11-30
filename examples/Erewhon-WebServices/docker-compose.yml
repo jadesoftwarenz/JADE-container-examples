@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  jade-erewhon-webshop:
+    image: erewhon-webshop
+    volumes:
+      - C:\jade\images:c:\temp
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "6107:6107"
+    networks:
+      - jade-net
+
+  jade-erewhon-rest:
+    image: erewhon-rest
+    volumes:
+      - C:\jade\images:c:\temp
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "6108:6108"
+    networks:
+      - jade-net
+  
+  jade-iis-server:
+    image: erewhon/iis-server:v1
+    volumes:
+      - C:\jade\images:c:\temp
+    ports:
+      - "4202:80"
+    networks:
+      - jade-net
+
+networks:
+  jade-net:
+    external:
+      name: nat

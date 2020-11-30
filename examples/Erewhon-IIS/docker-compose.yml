@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  jade-iis-server:
+    image: erewhon/iis-server:v1
+    volumes:
+      - C:\jade\images:c:\temp
+    ports:
+      - "4202:80"
+    networks:
+      - jade-net
+      
+networks:
+  jade-net:
+    external:
+      name: nat
