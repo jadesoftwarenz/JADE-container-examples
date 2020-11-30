@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   jade-erewhon-webshop:
-    image: erewhon-webshop
+    image: erewhon/webshop:v1
     volumes:
       - C:\jade\images:c:\temp
       - ${LogPath:-c:\jade\logs}:c:\logs
@@ -11,7 +11,7 @@ services:
       - jade-net
 
   jade-erewhon-rest:
-    image: erewhon-rest
+    image: erewhon/rest-api:v1
     volumes:
       - C:\jade\images:c:\temp
       - ${LogPath:-c:\jade\logs}:c:\logs

@@ -23,6 +23,6 @@ Push-Location $PSScriptRoot
 
 docker-compose up -d
 
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' erewhon-iis_jade-iis-server_1
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' erewhon-webservices_jade-iis-server_1
 
 Pop-Location
