@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  jade-erewhon-webshop:
+    image: erewhon/webshop:v1
+    volumes:
+      - ${ImagesPath:-c:\jade\images}:c:\temp
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "6107:6107"
+    networks:
+      - jade-net
+
+networks:
+  jade-net:
+    external:
+      name: nat

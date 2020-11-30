@@ -1,0 +1,48 @@
+PROP0001	Castle	Large 15th Century castle in the English countryside.	castle3.jpg	2599999	December 12 1999	June 5 2000	Angela Bettersfield	UK	London	Properties
+PROP0002	Castle	Expansive English castle with polo field adjacent.	castle5.jpg	4999999	November 6 1999	July 16 2000	Angela Bettersfield	UK	Sussex	Properties
+PROP0003	Castle	Recently renovated castle with early 13th century fittings.	castle7.jpg	6599999	October 3 1999	October 12 2000	Peter Smallsmith	UK	Essex	Properties
+PROP0004	Castle	Ex-Royal hideaway with lake outlook in the Scottish Highlands.	castle4.jpg	8599999	September 13 1999	March 30 2000	Petra Petrovski	UK	Scotland	Properties
+PROP1005	Mansion	Riverside 3-storied house with pool, tennis court and airstrip.	house12.jpg	3500000	October 9 1999	April 4 2000	Airi Hamada	New Zealand	Otago	Properties
+PROP1006	Mansion	Pool, tennis court, 8 car garage and on-site servants' quarters on a 200 hectare piece of paradise.	house18.jpg	4999999	September 9  1999	November 9 2000	Hank Williams	USA	Washington State	Properties
+PROP1007	Mansion	Castle-styled get-away with stables and helipad.	house30.jpg	4599995	December 25 1999	August 1 2000	Angela Bettersfield	UK	London	Properties
+ANQU0010	Silver	Early 17th century tea caddy.	caddy1.jpg	250	September 23 1999	December 20 1999	Airi Hamada	New Zealand	Auckland	Antiques
+ANQU0011	Ornament	Late 19th Century lithophane.	lithophane.jpg	325	November 6 1999	December 1 1999	Airi Hamada	New Zealand	Marlborough	Antiques
+ANQU0012	Wooden	Stained rimu writing box.	writingbox.jpg	225	September 6 1999	September 6 2000	Hank Williams	USA	Connecticut	Antiques
+ANQU0013	Desk	Desk from the French Revolution.	wooden.jpg	750	September 25 1999	July 16 2000	Angela Bettersfield	UK	Sussex	Antiques
+ANQU0014	Settee	Victorian settee with Indian silk.	sofa.jpg	1200	November 1 1999	November 29 1999	Pierre Lafayette	UK	Northampton	Antiques
+ANQU0015	Plate	Porcelain ornamental plate with hand-painted French scenery.	plate2.jpg	150	September 14 1999	February 12 2000	Hank Williams	USA	New England	Antiques
+ANQU0016	Picture	The Lord of Windsor and family after the annual Hunt with handcrafted frame.	picture.jpg	299	October 6 1999	October 6 2000	Peter Smallsmith	New Zealand	Canterbury	Antiques
+ANQU0017	Chalice	Sterling silver chalice with Victorian motifs.	chalice.jpg	160	November 22 1999	February 22 2000	Pierre Lafayette	UK	Northampton	Antiques
+ANQU0018	Case	Pocket case made of silver and gold from the early 17th century.	case.jpg	225	September 8 1999	January 5 2000	Angela Bettersfield	UK	Essex	Antiques
+ANQU0019	Cabinet	Solid rimu cabinet with gold handles and hand-painted decorations.	cabinet.jpg	899	December 21 1999	February 22 2000	Suzie Wu	New Zealand	Auckland	Antiques
+DEST0037	Orbit Trips	Visit the Hubble telescope for that weekend getaway with a difference.	hubble.jpg	1500000	December 25 1999	June 25 2000	Pierre Lafayette	USA	Los Angeles	Holidays
+DEST0038	Moon Walking	Trek the moon's frozen lakes and hit the longest golf drives ever!	moon.jpg	2000000	January 1 2000	July 1 2000	Petra Petrovski	USA	Los Angeles	Holidays
+PROP1008	Mansion	This beautifully maintained piece of splendour is being reluctantly tendered due to estate realisation.	prague.jpg	5500000	September 4 1999	July 4 2000	Angela Bettersfield	UK	Sussex	Properties
+PROP1009	Mansion	If you have ever wanted luxury and endless space, then this wonder steeped in history is for you.	house19.jpg	4400000	October 1 1999	February 11 2000	Suzie Wu	New Zealand	Otago	Properties
+PROP1010	Mansion	Own Sean Connery's weekend retreat in the highlands of Scotland.	house24.jpg	3699999	September 1 1999	July 30 2000	Hank Williams	UK	Scotland	Properties
+PROP1011	Mansion	Forest, stream, tennis court and live-in gardener are just a few reasons why this house is in such high demand.	house26.jpg	4222222	December 22 1999	January 22 2000	Peter Smallsmith	New Zealand	Canterbury	Properties
+ANQU0020	Oil Painting	This 19th century North American piece depicts the aftermath of an early typhoon.	oilpaint.jpg	6750	January 15 2000	February 15 2000	Tabai Tanivula	USA	Hawaii	Antiques
+ANQU0021	Water Jugs	Greek Gods were once bathed using these handcrafted works of art.	moorishjugs.jpg	899	September 30 1999	November 12 1999	Hank Williams	Europe	Greece	Antiques
+ANQU0022	Hutch	This Victorian Hutch is crafted out of the finest rimu and is in absolutely immaculate condition.	hutch.jpg	4999	October 5 1999	February 24 2000	Airi Hamada	Europe	Italy	Antiques
+ANQU0023	Outdoor Ornament	A cane carry basket with brass wheels harnessed to a china miniature horse. Perfect for the collector with an equestrian bent.	horsecart.jpg	2650	October 2 1999	December 2 1999	Petra Petrovski	Europe	Slovenia	Antiques
+ANQU0024	Fruit Bowl	Made by early European settlers, this piece is an investor's dream. 	fruitplate.jpg	299	September 19 1999	December 1 1999	Airi Hamada	Europe	Austria	Antiques
+ANQU0025	Framed Portrait	A portrait of a Confederate general from the American Civil War, finished in a breathtaking rimu frame.	confederateportrait.jpg	599	October 8 1999	January 1 2000	Peter Smallsmith	Europe	France	Antiques
+ANQU0026	Coffee Mill	Beautifully restored, this copper, gold and steel coffee mill is still in full working order.	coffemill.jpg	325	September 22 1999	November 19 1999	Suzie Wu	UK	Oxford	Antiques
+ANQU0027	Ceramic Servers	Hand-crafted ceramic serving spoons, finished in hand painted 9ct gold.	ceramicspoons.jpg	495	October 5 1999	November 5 1999	Pierre Lafayette	Asia	Macau	Antiques
+ANQU0028	Painting	This oil painting is from the private collection of the Tsar of Russia, and is a must for serious period art collectors.	canvas.jpg	8999	September 29 1999	January 1 2000	Tabai Tanivula	Asia	Bali	Antiques
+ANQU0029	Silver Candelabra	A very sought after pair, made from silver and finished with a gold base - simply superb.	candelabra.jpg	6999	October 5 1999	December 29 1999	Angela Bettersfield	Asia	Thailand	Antiques
+ANQU0030	Broach	This Victorian broach was a favourite of Queen Elizabeth II and has been in the royal family for over five generations.	broach-18ct.jpg	4995	October 1 1999	January 1 2000	Hank Williams	Asia	Hong Kong	Antiques
+ANQU0031	Box Plate	North American pioneers crafted box plates such as this to mark their arrival in the new land.	boxplate.jpg	799	November 14 1999	December 14 1999	Petra Petrovski	USA	Washington State	Antiques
+ANQU0032	Bookends	This pair of hand-made bronze book ends were a present to the Duke of York in the late 18th century.	bookends-bronze.jpg	1299	October 11 1999	January 16 2000	Peter Smallsmith	USA	Hawaii	Antiques
+ANQU0033	Ceramic Jug	Pre-Roman ceramic pieces such as this one are commanding high prices at world antique fairs - take advantage of this offer and purchase an example that will be the envy of any collector.	waterjug.jpg	450	September 29 1999	December 16 1999	Suzie Wu	USA	New York	Antiques
+PROP1012	Island	This private paradise in the South Pacific is a short helicopter ride from Auckland, New Zealand.	skyshots.jpg	8200000	October 7 1999	March 24 2000	Tabai Tanivula	New Zealand	Auckland	Properties
+PROP1013	Mansion	Overlooking the breathtaking Indian Ocean, this Spanish-styled, 20 bedroom mansion is pure luxury.	portsc1.jpg	5200000	November 26 1999	February 2 2000	Airi Hamada	Africa	South Africa	Properties
+PROP1014	Castle	This classical Austrian stone castle has been totally refitted with modern fixtures while maintaining its original character.	bigstonehouse.jpg	6500000	October 4 1999	January 4 2000	Petra Petrovski	Europe	Austria	Properties
+PROP1015	Mansion	Secluded in the Italian alps, this 16th century mansion exudes opulence while maintaining understated charm.	vegeholm.jpg	4251000	December 3 1999	February 6 2000	Pierre Lafayette	Europe	Italy	Properties
+PROP1016	Castle	Located in romantic England, this 15th century castle maintains character while providing expansive grounds and luxurious surroundings.	trollehm.jpg	6500000	November 1 1999	January 1 2000	Suzie Wu	UK	Oxford	Properties
+PROP1017	Mansion	Located on the banks of the Nile, this modern and elite piece of property is perfect for that pre-Christmas purchase. Indulge your Pharaoh fantasies!	reefwatch-pool.jpg	2600000	October 3 1999	December 20 1999	Peter Smallsmith	Africa	Egypt	Properties
+DEST1020	Timeshare	Stay in the lap of luxury in this modern Greek timeshare condo without the hassles of ownership.	timeshare.jpg	6999	October 4 1999	November 22 1999	Angela Bettersfield	Europe	Greece	Holidays
+DEST1021	Jet Flights	Take this unique opportunity to fly over breathtaking landmarks in jet fighter planes.	flightsnearmtfuji.jpg	10999	November 1 1999	December 29 1999	Tabai Tanivula	Asia	Hong Kong	Holidays
+DEST1022	French Homestay	Be in quick with your bid for this annual tender for a month living in French luxury.	italianhomestay.jpg	11999	October 8 1999	December 8 1999	Suzie Wu	Europe	France	Holidays
+DEST1023	Child Heaven	This is the ultimate holiday for children. This palace type homestay is highly sought after and will spoil them rotten.	kidspalace.jpg	9999	October 1 1999	December 1 1999	Peter Smallsmith	UK	Oxford	Holidays
+DEST1024	Camel trekking	Tender your bid for this unique chance to ride camel back through the most isolated places on earth.	morroco.jpg	7999	November 3 1999	December 12 1999	Hank Williams	Africa	Egypt	Holidays
