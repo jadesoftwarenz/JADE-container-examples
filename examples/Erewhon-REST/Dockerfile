@@ -2,6 +2,6 @@
 FROM registry.jadeworld.io/jade/non-gui-client:20.0.01-x64-U
 
 # define the entrypoint process
-ENTRYPOINT c:/bin/jade.exe ini=c:/system.ini, path=c:/system, `
+ENTRYPOINT c:/bin/jadclient.exe ini=c:/system.ini, path=c:/system, `
 jadelog.logfile=restlog, jadelog.logdirectory=c:/logs server=remoteServer `
 schema=ErewhonInvestmentsViewSchema app=ErewhonRestApp server=remoteServer

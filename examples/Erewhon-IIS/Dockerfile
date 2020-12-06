@@ -18,6 +18,9 @@ RUN Install-WindowsFeature Web-Server; `
     Install-WindowsFeature Web-Http-Tracing; `
     Enable-WebRequestTracing -Name \"Default Web Site\"
 
+COPY vc_redist.x64.exe /
+RUN Start-Process 'vc_redist.x64.exe' '/install /passive /norestart' -Wait;  Remove-Item vc_redist.x64.exe
+
 #setup Remote IIS management and add user for Remote IIS Manager Login
 
 RUN Install-WindowsFeature Web-Mgmt-Service; `
@@ -50,6 +53,6 @@ Set-WebConfiguration "/system.webServer/handlers/@AccessPolicy" -value \"Read, S
 RUN New-Item -Path \"C:\Temp\" -ItemType directory; `
 New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"C:\Temp\"
 
-EXPOSE 4202
 EXPOSE 80
+
 ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"] 

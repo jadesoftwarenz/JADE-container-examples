@@ -2,6 +2,7 @@ version: "3.8"
 services:
   jade-erewhon-rest:
     image: erewhon/rest-api:v1
+    container_name: "jade-erewhon-rest"
     volumes:
       - ${ImagesPath:-c:\jade\images}:c:\temp
       - ${LogPath:-c:\jade\logs}:c:\logs

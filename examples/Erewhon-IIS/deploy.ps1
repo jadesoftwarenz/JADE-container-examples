@@ -1,3 +1,5 @@
+# escape=`
+
 $configDirectory = $PSScriptRoot + "\..\..\config"
 $config = $configDirectory + "\run-config.ps1"
 # source configuration
@@ -10,9 +12,12 @@ $env:Tag = $jadeVersion + "-x64-U"
 $env:DatabasePath = $jadeDatabaseDirectory
 $env:JournalPath = $jadeJournalRootDirectory
 $env:LogPath = $jadeLogDirectory
+$env:IISLogPath = $jadeIISLogsDirectory
+$env:ImagePath = $jadeImagesDirectory
 $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
 
 Push-Location $PSScriptRoot
-docker-compose up -d
+docker-compose up -d 
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jade-iis-server
 Pop-Location

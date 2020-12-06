@@ -12,6 +12,7 @@ $jadeLogDirectory = $jadeRootDirectory + "\logs"
 $jadeDatabaseDirectory = $jadeRootDirectory + "\system"
 $jadeJournalRootDirectory = $jadeRootDirectory + "\journals"
 $jadeImagesDirectory = $jadeRootDirectory + "\images"
+$jadeIISLogsDirectory = $jadeRootDirectory + "\iis_logs"
 $iniFile = "system.ini"
 
 $registry = "registry.jadeworld.io"

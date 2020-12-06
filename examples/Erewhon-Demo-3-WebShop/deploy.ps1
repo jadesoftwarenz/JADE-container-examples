@@ -10,9 +10,14 @@ $env:Tag = $jadeVersion + "-x64-U"
 $env:DatabasePath = $jadeDatabaseDirectory
 $env:JournalPath = $jadeJournalRootDirectory
 $env:LogPath = $jadeLogDirectory
+$env:IISLogPath = $jadeIISLogsDirectory
+$env:ImagePath = $jadeImagesDirectory
 $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
 
+& $PSScriptRoot\..\Erewhon-Demo-2-AppServer\stop.ps1
+
 Push-Location $PSScriptRoot
 docker-compose up -d
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jade-iis-server
 Pop-Location
