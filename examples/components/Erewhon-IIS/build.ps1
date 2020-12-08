@@ -14,17 +14,10 @@ Copy-Item "$jadeBinDirectory\jadehttp.dll" -Destination "$PSScriptRoot\bin\"
 
 Push-Location $PSScriptRoot
 
-# Insert the Host's IP address into the jadehttp.ini file.
-# This should be replaced once the issue with obtaining host IP from container is fixed.
-
-#(Get-Content .\bin_jadehttp\ini\jadehttp_base.ini) `
-#    -replace '<<HostIP>>', (Get-NetIPAddress -interfacealias Ethernet).IPAddress `
-#    | Out-File .\bin_jadehttp\ini\jadehttp.ini
-
+# Insert the host name into the jadehttp.ini file.
 (Get-Content .\bin_jadehttp\ini\jadehttp_base.ini) `
-    -replace '<<HostIP>>', $hostName `
+    -replace '<<HostName>>', $hostName `
     | Out-File .\bin_jadehttp\ini\jadehttp.ini
-
 
 # Creates a folder in the JADE database directory to put IIS logs in.
 if (!(Test-Path $jadeIISLogsDirectory)) {
