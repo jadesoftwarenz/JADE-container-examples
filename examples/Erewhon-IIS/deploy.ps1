@@ -19,5 +19,4 @@ $env:AppServerListenPort = 443
 
 Push-Location $PSScriptRoot
 docker-compose up -d 
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jade-iis-server
 Pop-Location

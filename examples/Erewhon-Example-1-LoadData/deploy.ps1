@@ -27,16 +27,4 @@ if ((Test-Path "$jadeDatabaseDirectory\eredef.dat" -PathType leaf)) {
     & $PSScriptRoot\..\Database-Server-Container\stop.ps1
 }
 
-
-Write-Host "Building Web Shop Image..." -ForegroundColor Yellow
-& $PSScriptRoot\..\Erewhon-WebShop\build.ps1
-
-Write-Host "Building IIS Image..." -ForegroundColor Yellow
-& $PSScriptRoot\..\Erewhon-IIS\build.ps1
-
-Write-Host "Deploying Web Services Containers..." -ForegroundColor Yellow
-& $PSScriptRoot\deploy.ps1
-
-Write-Host "Erewhon System Ready!" -ForegroundColor Yellow
-
 Pop-Location

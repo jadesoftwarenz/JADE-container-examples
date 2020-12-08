@@ -1,15 +1,15 @@
-# JADE Web Services Erewhon Demo - Setting up your database
+# Erewhon examples - Setting up your database
 
-These instructions will get a JADE database with the Erewhon system installed on your computer. This JADE database will be containerised and used for web services in future demos. If you haven't already, make sure you follow the instructions in getting-started.md before proceeding further.
+These instructions will get a JADE database with the Erewhon system installed on your computer. This JADE database will be containerised and used for web services in future examples. If you haven't already, make sure you follow the instructions in [Getting Started](./getting-started.md) before proceeding further.
 
 ## Quick Setup
 
 If you want to skip the detailed instructions, you can run a script which will perform the steps automatically.
-This script will create a dedicated JADE database for use with the demo, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
+This script will create a dedicated JADE database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
 
 - Modify the __run-config.ps1__ script in the __/config/__ folder:
   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
-- You can now run the __deploy.ps1__ script from the __/examples/Erewhon-Demo-1-LoadData/__ folder.
+- You can now run the __deploy.ps1__ script from the __/examples/Erewhon-example-1-LoadData/__ folder.
 
 The __deploy.ps1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data.
 
@@ -35,6 +35,6 @@ Once that's up and running, run the __loadSchemas.ps1__ script from the __exampl
 
 ### Loading the Erewhon Data
 
-Once the schemas are loaded, we'll need to load the data. The Powershell script for this is found at __\Erewhon-Full-Demo\loadSchemas.ps1__. This again runs the jadclient.exe from the bin directory of the JADE database, but this time rather than running the RootSchema JadeSchemaLoader app, it will run the DataLoader app of the ErewhonInvestmentsModelSchema and pass in the directory with the Erewhon data in the startAppParameters command line argument.
+Once the schemas are loaded, we'll need to load the data. The Powershell script for this is found at __\Erewhon\loadSchemas.ps1__. This again runs the jadclient.exe from the bin directory of the JADE database, but this time rather than running the RootSchema JadeSchemaLoader app, it will run the DataLoader app of the ErewhonInvestmentsModelSchema and pass in the directory with the Erewhon data in the startAppParameters command line argument.
 
-Once the data is loaded, if you want to stop the database server you can run the __stop.ps1__ script in the __\examples\Database-Server-Container__ folder. This is not necessary if you are proceeding to the next demo, as in the next demo you will start up a database server if one isn't already running.
+Once the data is loaded, if you want to stop the database server you can run the __stop.ps1__ script in the __\examples\Database-Server-Container__ folder. This is not necessary if you are proceeding to the next example, as in the next example you will start up a database server if one isn't already running.

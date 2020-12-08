@@ -8,10 +8,13 @@ This example repository contains various examples that show how to use JADE cont
 
 [Getting Started](./Documentation/getting-started.md)
 
-[Erewhon Example 1 - Loading schema and data.](./Documentation/ErewhonDemo1.md)
-[Erewhon Example 2 - Deploying a Database and Single Application Server](./Documentation/ErewhonDemo2.md)
-[Erewhon Example 3 - Add an IIS container and deploy a Web Shop](./Documentation/ErewhonDemo3.md)
-[Erewhon Example 4 - Add a REST service provider](./Documentation/ErewhonDemo4.md)
+[Erewhon Example 1 - Loading schema and data.](./Documentation/ErewhonExample1.md)
+
+[Erewhon Example 2 - Deploying a Database and Single Application Server](./Documentation/ErewhonExample2.md)
+
+[Erewhon Example 3 - Add an IIS container and deploy a Web Shop](./Documentation/ErewhonExample3.md)
+
+[Erewhon Example 4 - Add a REST service provider](./Documentation/ErewhonExample4.md)
 
 ## License
 

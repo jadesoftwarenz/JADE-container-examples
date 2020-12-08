@@ -15,10 +15,9 @@ $env:ImagePath = $jadeImagesDirectory
 $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
 
-& $PSScriptRoot\..\Erewhon-Demo-2-AppServer\stop.ps1
-& $PSScriptRoot\..\Erewhon-Demo-3-WebShop\stop.ps1
+& $PSScriptRoot\..\Erewhon-Example-2-AppServer\stop.ps1
+& $PSScriptRoot\..\Erewhon-Example-3-WebShop\stop.ps1
 
 Push-Location $PSScriptRoot
 docker-compose up -d
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jade-iis-server
 Pop-Location

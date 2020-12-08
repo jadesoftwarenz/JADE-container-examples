@@ -1,12 +1,13 @@
 version: "3.8"
 services:
-  jade-iis-server:
+  iis-server:
     image: erewhon/iis-server:v1
-    container_name: "jade-iis-server"
     volumes:
       - ${ImagesPath:-c:\jade\images}:c:\temp
       - ${IISLogPath:-C:\jade\iis_logs}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
       - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
+    ports:
+      - "6109:80"  
     networks:
       - jade-net
       
