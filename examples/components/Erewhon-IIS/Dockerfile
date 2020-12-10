@@ -53,6 +53,22 @@ Set-WebConfiguration "/system.webServer/handlers/@AccessPolicy" -value \"Read, S
 RUN New-Item -Path \"C:\Temp\" -ItemType directory; `
 New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"C:\Temp\"
 
+HEALTHCHECK --interval=20s --timeout=10s `
+    CMD powershell -command `
+        try { `
+            $response = Invoke-WebRequest -Uri "http://localhost/JadeRestSite/jadehttp.dll?Status_Request" -UseBasicParsing -ErrorAction Stop; `
+            $StatusCode = $Response.StatusCode; `
+        } `
+        catch { `
+            $StatusCode = $_.Exception.Response.StatusCode.value__ `
+        }; `
+        if ($StatusCode -eq 200) { `
+            exit 0; `
+        } `
+        else { `
+            exit 1; `
+        }
+
 EXPOSE 80
 
 ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"] 

@@ -38,7 +38,30 @@ An example Dockerfile can be found at __\examples\components\Erewhon-WebShop\Doc
 FROM registry.jadeworld.io/jade/jade/gui-client:20.0.01-x64-U
 ```
 
-This base image is used for any GUI application. We need it to be GUI because Web Service Jade Forms applications require GUI functionality to generate the HTML based on the form. All we have to do to extend it is define the ENTRYPOINT, which has the following parts:
+This base image is used for any GUI application. We need it to be GUI because Web Service Jade Forms applications require GUI functionality to generate the HTML based on the form.
+
+The first extension to the base image is to use a HEALTHCHECK to provide information about whether the container is functioning correctly.
+
+```dockerfile
+HEALTHCHECK --interval=20s --timeout=10s `
+    CMD powershell -command `
+        try { `
+            $response = Test-NetConnection -computername 127.0.0.1 -port 6107; `
+            if ($response.TcpTestSucceeded) { `
+                exit 0; `
+            } `
+            else { `
+                exit 1; `
+            }; `
+        } `
+        catch { `
+            exit 1; `
+        }
+```
+
+This HEALTHCHECK will perform a PowerShell command every 20 seconds, and allow 10 seconds for the command to complete before failing. The PowerShell command will use __Test-NetConnection__ to determine whether port 6107 (the port the WebShop application should be listening on) is accepting requests, and exits with code 0 if it can get a 200 (Accepted) response, and code 1 if it gets any other response or has any other error. The HEALTHCHECK will mark the container with "unhealthy" if it fails the health check, and "healthy" if it passes. (You can see this information with the PowerShell command ```powershell docker ps```.)
+
+We will also need to extend it to define the ENTRYPOINT, which has the following parts:
 
 - c:/bin/jade.exe - What we're actually running. Note this is the path *inside* the container, not on the host.
 - ini=c:/system.ini - Again, this is inside the container not on the host.
@@ -162,6 +185,29 @@ This is all the setup we need to have IIS forward the requests correctly, but we
 RUN New-Item -Path \"C:\Temp\" -ItemType directory; `
 New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"C:\Temp\"
 ```
+
+We will also want to use a HEALTHCHECK to provide information about whether the container in functioning correctly (that is, the IIS is accepting requests). We can use the following:
+
+```dockerfile
+HEALTHCHECK --interval=20s --timeout=10s `
+    CMD powershell -command `
+        try { `
+            $response = Invoke-WebRequest -Uri "http://localhost/JadeRestSite/jadehttp.dll" -ErrorAction Stop; `
+            $StatusCode = $Response.StatusCode; `
+        } `
+        catch { `
+            $StatusCode = $_.Exception.Response.StatusCode.value__ `
+        }; `
+        if ($StatusCode -eq 400) { `
+            exit 0; `
+        } `
+        else { `
+            exit 1; `
+        }
+```
+
+This HEALTHCHECK will perform a PowerShell command every 20 seconds, and allow 10 seconds for the command to complete before failing. The PowerShell command will use __Invoke-WebRequest__ to determine whether the URL for the IIS application is running.
+ (the port the WebShop application should be listening on) is accepting requests, and exits with code 0 if it can get a 200 (Accepted) response, and code 1 if it gets any other response or has any other error. The HEALTHCHECK will mark the container with "unhealthy" if it fails the health check, and "healthy" if it passes. (You can see this information with the PowerShell command ```powershell docker ps```.)
 
 Now we just expose port 80 (this is actually optional but best practice to be explicit) and set the ENTRYPOINT to the Service Monitor we installed in the container earlier.
 
