@@ -16,4 +16,3 @@ $serverNetworkSpec = """TcpIpv4,$hostName,$dbServerListenPort"""
     jadeclient.ServerNodeSpecifications=$serverNetworkSpec  `
     schema= ErewhonInvestmentsModelSchema app=DataLoader `
     server=remoteServer startAppParameters $dataDirectory
-    
