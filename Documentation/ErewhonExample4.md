@@ -1,6 +1,6 @@
 # Erewhon Example 4 - Adding a RESTful Web Service
 
-These instructions will get all the components required for JADE Web Services running in containers. That is, a JADE database server container, a container running Microsoft IIS, and containers running the Erewhon WebShop and REST API applications. If you haven't already, make sure you follow the instructions in [Getting Started](./getting-started.md) before proceeding further. Doing the first three Erewhon examples before this example is recommended but not required.
+These instructions will get all the components required for JADE Web Services running in containers. That is, a database server container, a container running Microsoft IIS, and containers running the Erewhon WebShop and REST API applications. If you haven't already, make sure you follow the instructions in [Getting Started](./getting-started.md) before proceeding further. Doing the first three Erewhon examples before this example is recommended but not required.
 
 ## Quick Setup
 
@@ -8,7 +8,7 @@ If you want to skip the detailed instructions, you can run a script which will p
 
 If you have completed [Erewhon Example 1](./ErewhonExample1), you will have already completed the following. If not, do it now.
 
-> This script will create a dedicated JADE database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
+> This script will create a dedicated database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing database on your computer:
 >
 > - Modify the __run-config.ps1__ script in the __\examples\config\\__ folder:
 >   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
@@ -90,5 +90,5 @@ We now should have four containers running:
 
 - A container running the Erewhon REST API
 - A container running the Erewhon WebShop
-- A container running the JADE Database Server for your database
+- A container running a Database Server for your database
 - A container running an IIS server.

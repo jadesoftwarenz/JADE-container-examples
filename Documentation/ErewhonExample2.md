@@ -9,14 +9,14 @@ If you want to skip the detailed instructions, you can run a script which will p
 
 If you have done the [Erewhon Example 1](./ErewhonExample1), you will have already completed the following. If not, do it now.
 
-> This script will create a dedicated JADE database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
+> This script will create a dedicated database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing database on your computer:
 >
 > - Modify the __run-config.ps1__ script in the __\examples\config\\__ folder:
 >   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
 
 You can now run the __deploy.ps1__ script from the __\examples\Erewhon-example-2-AppServer\\__ folder.
 
-The __deploy.ps1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data. It will finally start a JADE database server and application server. Before each step it will check if the step has already been done, and only perform that step if needed.
+The __deploy.ps1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data. It will finally start a database server and application server. Before each step it will check if the step has already been done, and only perform that step if needed.
 
 You can now run the __thin-client.ps1__ script from the __\scripts\\__ folder to connect to the application server with a thin client.
 
@@ -26,7 +26,7 @@ For the manual setup, the details of [Erewhon Example 1](./ErewhonExample1) will
 
 ### Deploying the host database to a container
 
-Now that we have a database, we want to run it in its own container. To start the container running a JADE database server, we can use the __examples\Database-Server-Container\deploy.ps1__ script. This uses docker-compose to start the container described in the __docker-compose.yml__ file in the same folder.
+Now that we have a database, we want to run it in its own container. To start the container running a database server, we can use the __examples\Database-Server-Container\deploy.ps1__ script. This uses docker-compose to start the container described in the __docker-compose.yml__ file in the same folder.
 
 If we inspect this __docker-compose.yml__ we can see what it's doing:
 The container's name is specified as 'jade-rap', and under this heading are the following headings.

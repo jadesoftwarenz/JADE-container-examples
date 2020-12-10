@@ -9,7 +9,7 @@ If you want to skip the detailed instructions, you can run a script which will p
 
 If you have done the [Erewhon Example 1](./ErewhonExample1), you will have already completed the following. If not, do it now.
 
-> This script will create a dedicated JADE database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
+> This script will create a dedicated database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing database on your computer:
 >
 > - Modify the __run-config.ps1__ script in the __\examples\config\\__ folder:
 >   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.

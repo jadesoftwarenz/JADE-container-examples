@@ -1,11 +1,11 @@
 # Erewhon examples - Setting up your database
 
-These instructions will get a JADE database with the Erewhon system installed on your computer. This JADE database will be containerised and used for web services in future examples. If you haven't already, make sure you follow the instructions in [Getting Started](./getting-started.md) before proceeding further.
+These instructions will get a JADE database with the Erewhon system installed on your computer. This database will be used for web services in future examples. If you haven't already, make sure you follow the instructions in [Getting Started](./getting-started.md) before proceeding further.
 
 ## Quick Setup
 
 If you want to skip the detailed instructions, you can run a script which will perform the steps automatically.
-This script will create a dedicated JADE database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
+This script will create a dedicated database for use with the example, so you may need to specify where to put that database to avoid it interfering with any existing JADE database on your computer:
 
 - Modify the __run-config.ps1__ script in the __/config/__ folder:
   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
