@@ -77,3 +77,17 @@ docker container rm jade-app-server
 Now, when you run the ____ script from the __\examples\Erewhon-Example-2-Appserver\deploy.ps1__ folder, it should start up the two containers without error. You can use the __scripts\thin-client.ps1__ script to verify that you can connect to the application server.
 
 One advantage of using a single docker-compose.yml for multiple containers is that it's easy to start and stop related containers together. For example, if you run the __\examples\Erewhon-Example-2-Appserver\stop.ps1__ script, it will stop both of the containers together.
+
+## Using the Erewhon demo environment
+
+At this stage you should have a JADE database server and a JADE application server running in containers, ready for a thin client connection.
+
+You may like to try any of the following.
+
+- You can start a thin client IDE using the __thin-client-ps1__ script in the __/shortcuts/__ folder.
+- You can start the Erewhon Shop using the __run-erewhon-shop.ps1__ script in the __/examples/Erewhon/__ folder.
+- You can display logs from both containers, including events written to the  jommsg log and the windows event log. To do this, from a PowerShell, run:
+
+```powershell
+docker-compose logs
+```
