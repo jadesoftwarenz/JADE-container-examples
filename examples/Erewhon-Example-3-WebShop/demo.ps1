@@ -3,14 +3,35 @@
 Push-Location $PSScriptRoot
 
 Write-Host "Building Web Shop Image..." -ForegroundColor Yellow
-& $PSScriptRoot\..\components\Erewhon-WebShop\build.ps1
+try {
+    & ..\components\Erewhon-WebShop\build.ps1
+}
+catch {
+    Write-Error "Build of Web Shop Image failed. Aborting"
+    Pop-Location
+    exit 1
+}
 
 Write-Host "Building IIS Image..." -ForegroundColor Yellow
-& $PSScriptRoot\..\components\Erewhon-IIS\build.ps1
+
+try {
+    & ..\components\Erewhon-IIS\build.ps1
+}
+catch {
+    Write-Error "Build of IIS failed. Aborting"
+    Pop-Location
+    exit 1
+}
 
 Write-Host "Deploying Web Services Containers..." -ForegroundColor Yellow
-& $PSScriptRoot\deploy.ps1
+try {
+    & deploy.ps1
+}
+catch {
+    Write-Error "Deploy failed. Aborting"
+    Pop-Location
+    exit 1
+}
 
 Write-Host "Erewhon System Ready!" -ForegroundColor Yellow
-
 Pop-Location
