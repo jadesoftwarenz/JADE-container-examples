@@ -4,18 +4,14 @@ $config = $configDirectory + "\run-config.ps1"
 . ($config)
 
 # set environment variables used in compose yaml
-$env:Registry = $registry
-$env:RepoPrefix = $repoPrefix
-$env:Tag = $jadeVersion + "-x64-U"
-$env:DatabasePath = $jadeDatabaseDirectory
-$env:JournalPath = $jadeJournalRootDirectory
-$env:LogPath = $jadeLogDirectory
-$env:IISLogPath = $jadeIISLogsDirectory
-$env:ImagePath = $jadeImagesDirectory
-$env:RapListenPort = 9901
-$env:AppServerListenPort = 443
+$setEnvVars = $configDirectory + "set-env-vars.ps1"
+. ($setEnvVars)
 
 & $PSScriptRoot\..\Erewhon-Example-2-AppServer\stop.ps1
+
+# Creates a folder in the JADE database directory to put IIS logs in.
+$addLogsFolder = $configDirectory + "add-logs-folder.ps1"
+. ($addLogsFolder)
 
 Push-Location $PSScriptRoot
 docker-compose up -d

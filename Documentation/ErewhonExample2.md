@@ -18,7 +18,7 @@ You can now run the __deploy.ps1__ script from the __\examples\Erewhon-example-2
 
 The __deploy.ps1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data. It will finally start a database server and application server. Before each step it will check if the step has already been done, and only perform that step if needed.
 
-You can now run the __thin-client.ps1__ script from the __\scripts\\__ folder to connect to the application server with a thin client.
+You can now run the __thin-client.ps1__ script from the __\shortcuts\\__ folder to connect to the application server with a thin client.
 
 ## Manual Setup
 

@@ -20,10 +20,8 @@ Push-Location $PSScriptRoot
     | Out-File .\bin_jadehttp\ini\jadehttp.ini
 
 # Creates a folder in the JADE database directory to put IIS logs in.
-if (!(Test-Path $jadeIISLogsDirectory)) {
-    Write-Host "Creating IIS logs folder on host at: $jadeIISLogsDirectory"  -ForegroundColor Yellow
-    New-Item -Path $jadeRootDirectory -Name "iis_logs" -ItemType "directory"
-}
+$addLogsFolder = $configDirectory + "add-logs-folder.ps1"
+. ($addLogsFolder)
 
 docker build -t erewhon/iis-server:v1 .
 
