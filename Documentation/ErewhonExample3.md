@@ -14,9 +14,9 @@ If you have done the [Erewhon Example 1](./ErewhonExample1), you will have alrea
 > - Modify the __run-config.ps1__ script in the __\examples\config\\__ folder:
 >   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
 
-You can now run the __\examples\Erewhon-Example-3-WebShop\deploy.ps1__ script.
+You can now run the __\examples\Erewhon-Example-3-WebShop\demo.ps1__ script.
 
-The __deploy.ps1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data. Finally, it will build an IIS image and start up containers for the IIS service, the database server, and the Erewhon WebShop application. Before each step it will check if the step has already been done, and only perform that step if needed.
+The __demops1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data. Finally, it will build an IIS image and start up containers for the IIS service, the database server, and the Erewhon WebShop application. Before each step it will check if the step has already been done, and only perform that step if needed.
 
 Once the containers are set up and running, you can access the Erewhon WebShop as follows:
 
