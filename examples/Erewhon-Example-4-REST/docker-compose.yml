@@ -6,6 +6,7 @@ services:
       - ${DatabasePath:-c:\jade\system}:c:\system
       - ${JournalPath:-c:\jade\journals}:c:\journals
       - ${LogPath:-c:\jade\logs}:c:\logs
+      - ${LogPath:-c:\jade\ProcessDumps}:c:\ProcessDumps
     ports:
       - "${RapListenPort:-9901}:9901"
     networks:

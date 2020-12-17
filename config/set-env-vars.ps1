@@ -11,6 +11,7 @@ $env:DatabasePath = $jadeDatabaseDirectory
 $env:JournalPath = $jadeJournalRootDirectory
 $env:ImagesPath = $jadeImagesDirectory
 $env:IISLogPath = $jadeIISLogsDirectory
+$env:DumpsPath = $jadeDumpsDirectory
 $env:LogPath = $jadeLogDirectory
 $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
