@@ -5,8 +5,8 @@ services:
     volumes:
       - ${ImagesPath:-c:\jade\images}:c:\temp
       - ${LogPath:-c:\jade\logs}:c:\logs
-    ports:
-      - "6108:6108"
+    expose:
+      - "6108"
     networks:
       - jade-net
       

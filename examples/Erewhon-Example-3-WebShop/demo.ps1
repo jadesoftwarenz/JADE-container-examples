@@ -25,7 +25,7 @@ catch {
 
 Write-Host "Deploying Web Services Containers..." -ForegroundColor Yellow
 try {
-    & deploy.ps1
+    & .\deploy.ps1
 }
 catch {
     Write-Error "Deploy failed. Aborting"
