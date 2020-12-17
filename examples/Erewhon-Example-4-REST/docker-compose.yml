@@ -6,7 +6,7 @@ services:
       - ${DatabasePath:-c:\jade\system}:c:\system
       - ${JournalPath:-c:\jade\journals}:c:\journals
       - ${LogPath:-c:\jade\logs}:c:\logs
-      - ${LogPath:-c:\jade\ProcessDumps}:c:\ProcessDumps
+      - ${DumpsPath:-c:\jade\ProcessDumps}:c:\ProcessDumps
     ports:
       - "${RapListenPort:-9901}:9901"
     networks:
@@ -40,7 +40,7 @@ services:
     image: erewhon/iis-server:v1
     volumes:
       - ${ImagesPath:-c:\jade\images}:c:\temp
-      - ${IISLogPath:-C:\jade\iis_logs}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
+      - ${IISLogPath:-C:\jade\iis_logs\FailedReqLogFiles}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
       - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
     ports:
       - "6109:80"  

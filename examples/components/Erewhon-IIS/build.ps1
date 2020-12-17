@@ -14,15 +14,6 @@ Copy-Item "$jadeBinDirectory\jadehttp.dll" -Destination "$PSScriptRoot\bin\"
 
 Push-Location $PSScriptRoot
 
-# Insert the host name into the jadehttp.ini file.
-(Get-Content .\bin_jadehttp\ini\jadehttp_base.ini) `
-    -replace '<<HostName>>', $hostName `
-    | Out-File .\bin_jadehttp\ini\jadehttp.ini
-
-# Creates a folder in the JADE database directory to put IIS logs in.
-$addLogsFolder = $configDirectory + "add-logs-folder.ps1"
-. ($addLogsFolder)
-
 docker build -t erewhon/iis-server:v1 .
 
 # Remove temporarily copied files from script root.

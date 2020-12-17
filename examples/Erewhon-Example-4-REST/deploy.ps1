@@ -10,10 +10,6 @@ $setEnvVars = $configDirectory + "\set-env-vars.ps1"
 & $PSScriptRoot\..\Erewhon-Example-2-AppServer\stop.ps1
 & $PSScriptRoot\..\Erewhon-Example-3-WebShop\stop.ps1
 
-# Creates a folder in the JADE database directory to put IIS logs in.
-$addLogsFolder = $configDirectory + "\add-logs-folder.ps1"
-. ($addLogsFolder)
-
 Push-Location $PSScriptRoot
 docker-compose up -d
 Pop-Location
