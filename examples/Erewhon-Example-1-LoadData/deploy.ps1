@@ -18,6 +18,13 @@ if ((Test-Path "$jadeDatabaseDirectory\eredef.dat" -PathType leaf)) {
 } else {
     Write-Host "Starting Database Server for Erewhon import..." -ForegroundColor Yellow
     & ..\Database-Server-Container\deploy.ps1
+    
+    # Chill until the rap starts.
+    while (!(docker exec jade-database-server powershell Test-NetConnection jade-rap -port 9901)) {
+        Write-Host "Waiting for rap to start..."
+        Start-Sleep -Seconds 1
+    }
+
     try {
         Write-Host "Loading Erewhon schemas..." -ForegroundColor Yellow
         & ..\Erewhon\loadSchemas.ps1
