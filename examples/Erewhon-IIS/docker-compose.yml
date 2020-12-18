@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  iis-server:
+    image: erewhon/iis-server:v1
+    volumes:
+      - ${ImagesPath:-c:\jade\images}:c:\temp
+      - ${IISLogPath:-C:\jade\iis_logs}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
+      - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
+    ports:
+      - "6109:80"  
+    networks:
+      - jade-net
+      
+networks:
+  jade-net:
+    external:
+      name: nat

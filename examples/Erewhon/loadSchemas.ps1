@@ -11,9 +11,8 @@ $command = "$jadeBinDirectory\$tool"
 
 $serverNetworkSpec = """TcpIpv4,$hostName,$dbServerListenPort"""
 
-& $command path=c:\system ini="$PSScriptRoot\system.ini" `
+& $command path=c:\system ini="$configDirectory\system.ini" `
     jadelog.logdirectory=$jadelogDirectory jadelog.logfile="schemaload" `
     jadeclient.ServerNodeSpecifications=$serverNetworkSpec  `
-    schema=RootSchema app=JadeSchemaLoader server=remoteServer startAppParameters `
-    schemaFile="$schemaDirectory\ErewhonInvestments.mul"
-    
+    schema=RootSchema app=JadeSchemaLoader server=remoteServer `
+    startAppParameters schemaFile="$schemaDirectory\ErewhonInvestments.mul" loadStyle=onlyStructuralVersioning endAppParameters

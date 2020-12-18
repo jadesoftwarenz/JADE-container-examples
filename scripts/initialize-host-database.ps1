@@ -79,7 +79,16 @@ try {
       if (!(Test-Path $jadeJournalRootDirectory)) {
             New-Item -ItemType Directory -Force -Path $jadeJournalRootDirectory
       }
-      
+      if (!(Test-Path $jadeImagesDirectory)) {
+            New-Item -ItemType Directory -Force -Path $jadeImagesDirectory
+      }
+      if (!(Test-Path $jadeDumpsDirectory)) {
+            New-Item -ItemType Directory -Force -Path $jadeDumpsDirectory
+      }
+      if (!(Test-Path $jadeIISLogsDirectory)) {
+            New-Item -ItemType Directory -Force -Path $jadeIISLogsDirectory
+      }
+
       if ((Test-Path "$jadeDatabaseDirectory\_control.dat" -PathType leaf)) {
             Write-Host "_control.dat found in directory: $jadeDatabaseDirectory, database install skipped" -ForegroundColor Green
       }

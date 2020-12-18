@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  jade-rap:
+    image: ${Registry:-}/jade/database-server:${Tag:-20.0.01-x64-U}
+    volumes:
+      - ${DatabasePath:-c:\jade\system}:c:\system
+      - ${JournalPath:-c:\jade\journals}:c:\journals
+      - ${LogPath:-c:\jade\logs}:c:\logs
+      - ${DumpsPath:-c:\jade\ProcessDumps}:c:\ProcessDumps
+    ports:
+      - "${RapListenPort:-9901}:9901"
+    networks:
+      - jade-net
+
+  erewhon-webshop:
+    depends_on: 
+      - jade-rap
+    image: erewhon/webshop:v1
+    volumes:
+      - ${ImagesPath:-c:\jade\images}:c:\temp
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "6107:6107"
+    networks:
+      - jade-net
+  
+  iis-server:
+    image: erewhon/iis-server:v1
+    volumes:
+      - ${ImagesPath:-c:\jade\images}:c:\temp
+      - ${IISLogPath:-C:\jade\iis_logs}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
+      - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
+    ports:
+      - "6109:80"  
+    networks:
+      - jade-net
+
+networks:
+  jade-net:
+    external:
+      name: nat

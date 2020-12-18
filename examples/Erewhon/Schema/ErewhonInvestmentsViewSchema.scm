@@ -1,4 +1,4 @@
-jadeVersionNumber "99.0.00";
+jadeVersionNumber "20.0.01";
 schemaDefinition
 ErewhonInvestmentsViewSchema subschemaOf ErewhonInvestmentsModelSchema completeDefinition, patchVersioningEnabled = false;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
@@ -20,6 +20,8 @@ constantDefinitions
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 		JadeUnitTest:                  String = "JadeUnitTest";
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:26:14:02:32.751;
+		RestService:                   String = "ErewhonRestApp";
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:20:11:46:15.875;
 		ShopApp:                       String = "ErewhonShop";
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 		ShopAppPDA:                    String = "ErewhonShopPDA";
@@ -134,25 +136,25 @@ localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 	10249 "English (Belize)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
-	11273 "English (Trinidad and Tobago)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+	11273 "English (Trinidad & Tobago)" _cloneOf 5129;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	2057 "English (United Kingdom)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	3081 "English (Australia)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	4105 "English (Canada)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	6153 "English (Ireland)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	7177 "English (South Africa)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	8201 "English (Jamaica)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 	9225 "English (Caribbean)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2019:02:18:13:52:18;
+		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
 translatableStringDefinitions
 	5129 "English (New Zealand)"
 	(
@@ -660,6 +662,7 @@ libraryDefinitions
 typeHeaders
 	ErewhonInvestmentsViewApp subclassOf ErewhonInvestmentsModelApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestSubId = 3, highestOrdinal = 9, number = 2152;
 	GErewhonInvestmentsViewSchema subclassOf GErewhonInvestmentsModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2154;
+	ErewhonRestService subclassOf JadeRestService transient, transientAllowed, subclassTransientAllowed, number = 2048;
 	TestSaleItemSearch subclassOf JadeTestCase highestOrdinal = 7, number = 2153;
 	TestViewApp subclassOf JadeTestCase highestOrdinal = 1, number = 2208;
 	TestViewSale subclassOf JadeTestCase highestOrdinal = 4, number = 2104;
@@ -894,13 +897,13 @@ starts, therefore they cannot be debugged.`
 		getAndValidateUser(
 			usercode: String output; 
 			password: String output): Boolean number = 1002;
-		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:45:55.746;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:20:11:59:28.209;
 		getErrorString(errorNo: Integer): String number = 1003;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:10:04:04.502;
 		isUserValid(
 			usercode: String; 
 			password: String): Boolean number = 1004;
-		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:46:05.648;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:20:11:59:59.291;
 	)
 	JadeRestService completeDefinition
 	(
@@ -909,6 +912,52 @@ starts, therefore they cannot be debugged.`
 	jadeMethodDefinitions
 		get() number = 1001;
 		setModifiedTimeStamp "cnwta3" "18.0.01" 2019:02:21:17:32:31.705;
+	)
+	ErewhonRestService completeDefinition
+	(
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:09:38:01.432;
+ 
+	jadeMethodDefinitions
+		getAgent(name: String): Agent number = 1006;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:11:00:31.504;
+		getAllAgents(): AgentByNameDict number = 1007;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:12:52:08.567;
+		getAllClients(): ClientByNameDict number = 1013;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:14:38:40.954;
+		getAllSales(): SaleSet number = 1008;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:14:36:33.488;
+		getClient(name: String): Client number = 1009;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:11:00:40.857;
+		getCompany(): Company number = 1005;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:11:00:43.967;
+		getSale(
+			codePrefix: String; 
+			codeNumber: Integer): Sale number = 1003;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:11:34:20.618;
+		getSaleItemByCode(
+			codePrefix: String; 
+			codeNumber: Integer): SaleItem number = 1010;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:11:00:15.728;
+		getSaleItemsByPrice(
+			minPrice: Integer; 
+			maxPrice: Integer): SaleItemByCodeDict number = 1011;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:14:39:38.641;
+		postAgent(address: Address) number = 1012;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:09:46:09.566;
+		postClient(address: Address) number = 1014;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:09:41:07.274;
+		postRetailSale(
+			clientName: String; 
+			codePrefix: String; 
+			codeNumber: Integer; 
+			offer: Decimal) number = 1015;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:10:42:44.832;
+		postTender(
+			clientName: String; 
+			codePrefix: String; 
+			codeNumber: Integer; 
+			offer: Decimal) number = 1016;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:10:40:59.251;
 	)
 	JadeScript completeDefinition
 	(
@@ -1198,7 +1247,7 @@ Client and Agent details can also be updated using this service (2 variations).`
 	documentationText
 `This method will return a string array of agent names.`
 
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:40:51.964;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:20:12:23:47.384;
 		webServicesMethodProperties
 		(
 			inputEncodingStyle = "";
@@ -4065,9 +4114,9 @@ ErewhonInvestmentsViewSchemaDb
 	(
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 	databaseFileDefinitions
-		"erecart" number=88;
+		"erecart" number = 88;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
-		"eredef" number=54;
+		"eredef" number = 54;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions
@@ -4084,6 +4133,7 @@ ErewhonInvestmentsViewSchemaDb
 		SaleItemSearch in "ereitem";
 		ErewhonInvestmentsService in "erewebservice";
 		ErewhonInvestmentsServiceAdmin in "erewebservice";
+		ErewhonRestService in "erewebservice";
 	)
 schemaViewDefinitions
 _exposedListDefinitions
@@ -5291,6 +5341,7 @@ begin
 	endif;
 
 	if 	app.name <> AdminApp and
+			app.name <> RestService and	
 			app.name <> ShopAppPDA and	
 			app.name <> ShopApp and
 			app.name <> ErewhonDotNetShop and
@@ -5305,8 +5356,8 @@ begin
 		app.msgBox($UnknownApplication, $Error, MsgBox_Stop_Icon + MsgBox_OK_Only);
 		return false;
 	endif;
-
 	if 	app.isWebShopApp or 
+		app.name = RestService or
 		app.name = ErewhonDotNetShop or
 		app.name = TenderClosureApp or 
 		app.name = WebServiceOverHttpApp or
@@ -5387,6 +5438,7 @@ begin
 	endif;
 	
 	if 	app.isWebShopApp or 
+		app.name = RestService or
 		app.name = ErewhonDotNetShop or
 		app.name = TenderClosureApp or 
 		app.name = WebServiceOverHttpApp or
@@ -5443,6 +5495,263 @@ vars
 
 begin
 
+end;
+
+}
+
+	)
+	ErewhonRestService (
+	jadeMethodSources
+getAgent
+{
+getAgent(name : String) : Agent;
+
+vars
+	agents : AgentByNameDict;
+begin
+	agents := app.myCompany.allAgents;
+	if agents.includesKey(name) then
+		return agents[name].cloneSelf(true);
+	else
+		return null;
+	endif;
+end;
+
+}
+
+getAllAgents
+{
+getAllAgents() : AgentByNameDict;
+
+vars
+	agents : AgentByNameDict;
+	agent : Agent;
+	clone : Agent;
+begin
+	create agents transient;
+	foreach agent in app.myCompany.allAgents do
+		clone := agent.cloneSelf(true);
+		clone.setPropertyValue(Agent::myAddress.name, agent.myAddress);
+		agents.add(clone);
+	endforeach;
+	return agents.cloneSelf(true);
+end;
+
+}
+
+getAllClients
+{
+getAllClients() : ClientByNameDict;
+
+vars
+	clients : ClientByNameDict;
+	client : Client;
+	clone : Client;
+begin
+	create clients transient;
+	foreach client in app.myCompany.allClients do
+		clone := client.cloneSelf(true);
+		clone.setPropertyValue(Client::myAddress.name, client.myAddress.cloneSelf(true));
+		clients.add(clone);
+	endforeach;
+	return clients.cloneSelf(true);
+end;
+
+}
+
+getAllSales
+{
+getAllSales() : SaleSet;
+
+vars
+	foundSales	: SaleSet;
+	sale		: Sale;
+	clone		: Sale;
+	sales		: SaleSet;
+begin
+	create foundSales transient;
+	create sales transient;
+	app.myCompany.getAllSales(sales);
+	foreach sale in sales do
+		clone := sale.cloneSelf(true);
+		clone.setPropertyValue(Sale::mySaleItem.name, sale.mySaleItem.cloneSelf(true));
+		clone.setPropertyValue(Sale::myClient.name, sale.myClient.cloneSelf(true));
+		clone.setPropertyValue(Sale::myCompany.name, sale.myCompany.cloneSelf(true));
+		foundSales.add(clone);
+	endforeach;
+	return foundSales;
+end;
+
+}
+
+getClient
+{
+getClient(name : String) : Client;
+
+vars
+	clients : ClientByNameDict;
+begin
+	clients := app.myCompany.allClients;
+	if clients.includesKey(name) then
+		return clients[name].cloneSelf(true);
+	else
+		return null;
+	endif;
+end;
+
+}
+
+getCompany
+{
+getCompany() : Company;
+
+begin
+	return app.myCompany.cloneSelf(true);
+end;
+
+}
+
+getSale
+{
+getSale(codePrefix : String; codeNumber : Integer) : Sale;
+
+vars
+	theCompany	: Company;
+	agent		: Agent;
+	names		: StringArray;
+	sales		: SaleByItemDict;
+begin
+	theCompany := app.myCompany ;
+	if theCompany = null then
+		return null;
+	endif;
+	sales := theCompany.allSalesByItem;
+	if sales.includesKey(codePrefix, codeNumber) then
+		return theCompany.allSalesByItem[codePrefix, codeNumber].cloneSelf(true);
+	else
+		return null;
+	endif;
+	
+end;
+
+}
+
+getSaleItemByCode
+{
+getSaleItemByCode(codePrefix : String; codeNumber : Integer) : SaleItem;
+
+vars
+	saleItems : SaleItemByCodeDict;
+begin
+	saleItems := app.myCompany.allSaleItems;
+	if saleItems.includesKey(codePrefix, codeNumber) then
+		return saleItems[codePrefix, codeNumber].cloneSelf(true);
+	else
+		return null;
+	endif;
+end;
+
+}
+
+getSaleItemsByPrice
+{
+getSaleItemsByPrice(minPrice, maxPrice : Integer) : SaleItemByCodeDict;
+
+vars
+	saleItems : SaleItemByCodeDict;
+	saleItem  : SaleItem;
+	foundItems : SaleItemByCodeDict;
+begin
+	saleItems := app.myCompany.allSaleItems;
+	create foundItems transient;
+	foreach saleItem in saleItems where saleItem.price > minPrice and saleItem.price < maxPrice do
+		foundItems.add(saleItem.cloneSelf(true));
+	endforeach;
+	return foundItems.cloneSelf(true);
+end;
+
+}
+
+postAgent
+{
+postAgent(address : Address);
+
+begin
+	beginTransaction;
+	app.myCompany.createAgent(address);
+	commitTransaction;
+end;
+
+}
+
+postClient
+{
+postClient(address : Address);
+
+begin
+	beginTransaction;
+	app.myCompany.createClient(address);
+	commitTransaction;
+end;
+
+}
+
+postRetailSale
+{
+postRetailSale(clientName : String; codePrefix : String; codeNumber : Integer; offer : Decimal);
+
+vars
+	company : Company;
+	client	: Client;
+	item	: SaleItem;
+	now		: TimeStamp;
+begin
+	company := app.myCompany;
+	if company.allClients.includesKey(clientName) then
+		client := company.allClients[clientName];
+	else
+		return;
+	endif;
+	
+	if company.allSaleItems.includesKey(codePrefix, codeNumber) then
+		item := app.myCompany.allSaleItems[codePrefix, codeNumber];
+	else
+		return;
+	endif;
+	
+	if item.isKindOf(RetailSaleItem) then
+		company.createRetailSale(item.RetailSaleItem, client, item.price, now);
+	endif;
+end;
+
+}
+
+postTender
+{
+postTender(clientName : String; codePrefix : String; codeNumber : Integer; offer : Decimal);
+
+vars
+	company : Company;
+	client	: Client;
+	item	: SaleItem;
+	now		: TimeStamp;
+begin
+	company := app.myCompany;
+	if company.allClients.includesKey(clientName) then
+		client := company.allClients[clientName];
+	else
+		return;
+	endif;
+	
+	if company.allSaleItems.includesKey(codePrefix, codeNumber) then
+		item := app.myCompany.allSaleItems[codePrefix, codeNumber];
+	else
+		return;
+	endif;
+	
+	if item.isKindOf(TenderSaleItem) then
+		client.createTender(offer, now, item.TenderSaleItem);
+	endif;
 end;
 
 }

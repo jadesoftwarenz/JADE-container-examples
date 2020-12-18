@@ -1,0 +1,204 @@
+## gitattributes for the jade repository
+##
+## AUTO-DETECT
+##   Handle line endings automatically for files detected as
+##   text and leave all files detected as binary untouched
+* text=auto
+
+#
+# The above will handle all file types NOT found below
+#
+
+# Source Code
+*.c text diff=cpp
+*.cc text diff=cpp
+*.cxx text diff=cpp
+*.cpp text diff=cpp
+*.c++ text diff=cpp
+*.hpp text diff=cpp
+*.h text diff=cpp
+*.h++ text diff=cpp
+*.hh text diff=cpp
+*.cs text diff=csharp
+*.css text diff=css
+*.def text
+*.htm text diff=html
+*.html text diff=html
+*.inc text
+*.java text diff=java
+*.js text
+*.json text
+*.jsx text
+*.pl text diff=pearl
+*.py text diff=python
+*.rb text diff=ruby
+*.rc text
+*.scm text 
+*.sql text
+*.styl text
+*.tag text
+*.ts text
+*.tsx text
+*.txt text
+*.vue text
+*.xml text
+*.xhtml text diff=html
+*.wsdl text
+
+# Additional JADE specific file types
+*.cls text
+*.mth text
+*.ddb text
+*.ddbx text
+*.ddx text
+*.jlsn text
+*.jprj text
+
+# Documents
+*.doc
+*.DOC
+*.docx
+*.DOCX
+*.dot
+*.DOT
+*.pdf
+*.PDF
+*.rtf
+*.RTF
+*.md text
+*.tex text diff=tex
+*.adoc text
+*.textile text
+*.mustache text
+*.csv text
+*.tab text
+*.tsv text
+*.sql text
+AUTHORS text
+CHANGELOG text
+CHANGES text
+CONTRIBUTING text
+COPYING text
+copyright text
+*COPYRIGHT* text
+INSTALL text
+license text
+LICENSE text
+NEWS text
+readme text
+*README* text
+TODO text
+
+#
+# Declare files that will always have native line endings on checkout.
+#
+# Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Linux
+*.sh text eol=lf
+
+# Visual Studio
+*.sln        text
+*.csproj     text
+*.vbproj     text
+*.vcxproj    text
+*.vcproj     text
+*.dbproj     text
+*.fsproj     text
+*.lsproj     text
+*.wixproj    text
+*.modelproj  text
+*.sqlproj    text
+*.wmaproj    text
+*.xproj      text
+*.props      text
+*.filters    text
+*.vcxitems   text
+
+# Enterprise Architect project file
+*.eap binary
+
+# Configuration
+*.cnf text
+*.cfg text
+*.conf text
+*.config text
+*.ini text
+*.bowerrc text
+.browserslistrc text
+.editorconfig text
+*.npmignore text
+*.yaml text
+*.yml text
+browserslist text
+Makefile text
+makefile text
+Procfile text
+.slugignore text
+
+## DOCKER
+*.dockerignore text
+Dockerfile text
+
+# Compiled Dynamic libraries
+*.so binary
+*.dylib binary
+*.dll binary
+
+# Compiled Static libraries
+*.lai binary
+*.la binary
+*.a binary
+*.lib binary
+
+# Compiled Object files
+*.slo binary
+*.lo binary
+*.o binary
+*.obj binary
+
+# Precompiled Headers
+*.gch binary
+*.pch binary
+
+# Executables
+*.exe binary
+*.pyc binary
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tif binary
+*.tiff binary
+*.ico binary
+# SVG treated as an asset (binary) by default. If you want to treat it as text,
+# comment-out the following line and uncomment the line after.
+*.svg binary
+#*.svg text
+*.eps binary
+
+# Archives
+*.7z  binary
+*.gz  binary
+*.jar binary
+*.rar binary
+*.tar binary
+*.war binary
+*.zip binary
+
+# Fonts
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+
+#
+# Exclude files from exporting
+#
+.gitattributes export-ignore
+.gitignore export-ignore
