@@ -50,6 +50,8 @@ Set-WebHandler `
 RUN Add-WebConfiguration -filter "system.webServer/security/isapiCgiRestriction" -value @{description='Jade-ISAPI';path='C:\bin\jadehttp.dll';allowed='True'}; `
 Set-WebConfiguration "/system.webServer/handlers/@AccessPolicy" -value \"Read, Script, Execute\"
 
+RUN Set-WebBinding -Name 'Default Web Site' -BindingInformation "*:80:" -PropertyName Port -Value 6109
+
 RUN New-Item -Path \"C:\Temp\" -ItemType directory; `
 New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"C:\Temp\"
 
