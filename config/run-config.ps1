@@ -19,6 +19,12 @@ $iniFile = "system.ini"
 $registry = "registry.jadeworld.io"
 $repoPrefix = "jade"
 
-# Default Free Licence key - Change settings to use your own site or personal key
+# Default Free Licence key - Change settings to use your own licence and keys
 $regName="JADE Container World"
+# Database or SDS primary key
 $regKey1="C7B23D8ACEBEB2B0A6B2B0B39085B2B2"
+# SDS secondary key
+$regKey2=""
+# RPS key
+$regKey3=""
+

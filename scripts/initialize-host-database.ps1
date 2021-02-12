@@ -101,7 +101,10 @@ try {
       Write-Host "Client binaries installed in directory: $jadeBinDirectory"
       
       # Apply licences
-      ApplyLicence -name $regName -key $regKey1 
+      ApplyLicence -name $regName -key $regKey1 # Single database or SDS primary
+      # Uncomment these if you have SDS primary and secondary keys
+      # ApplyLicence -name $regName -key $regKey2 # SDS native secondary
+      # ApplyLicence -name $regName -key $regKey3 # RPS secondary
 
       Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
   

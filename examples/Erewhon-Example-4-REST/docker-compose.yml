@@ -12,6 +12,18 @@ services:
     networks:
       - jade-net
 
+  jade-app-server:
+    image: ${Registry:-}/${RepoPrefix:-}/application-server:${Tag:-20.0.01-x64-U}
+    container_name: "jade-app-server"
+    depends_on: 
+      - jade-rap
+    volumes:
+      - ${LogPath:-c:\jade\logs}:c:\logs
+    ports:
+      - "${AppServerListenPort:-443}:9907"
+    networks:
+      - jade-net
+
   erewhon-webshop:
     depends_on: 
       - jade-rap

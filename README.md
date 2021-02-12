@@ -16,6 +16,18 @@ This example repository contains various examples that show how to use JADE cont
 
 [Erewhon Example 4 - Add a REST service provider](./Documentation/ErewhonExample4.md)
 
+## Further Reading
+
+For more information on Windows containers, see the following documentation.
+
+- Microsoft documentation on [Windows containers](https://docs.microsoft.com/virtualization/windowscontainers/about/index).
+
+## Troubleshooting
+
+If you run into trouble running Windows containers, take a look at <https://docs.microsoft.com/virtualization/windowscontainers/troubleshooting>
+
+For information on troubleshooting Docker Desktop for Windows issues see:
+<https://docs.docker.com/docker-for-windows/troubleshoot/https://docs.docker.com/docker-for-windows/troubleshoot/>
 ## License
 
 MIT - for more details see, the [LICENSE](./LICENSE) file.

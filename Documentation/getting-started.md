@@ -88,19 +88,3 @@ You are now all setup and ready to roll with JADE containers.
 ## Get Started with Docker for Windows
 
 If you have not used Docker (or Docker on Windows), visit [Get started with Docker for Windows](https://docs.docker.com/docker-for-windows/) and get familiar with the basics.
-
-## Further Reading
-
-For more information on Windows containers, see the following documentation.
-
-- Microsoft documentation on [Windows containers](https://docs.microsoft.com/virtualization/windowscontainers/about/index).
-- To understand how to connect to Windows containers from the local host, see
-  [Limitations of Windows containers for `localhost` and published ports](troubleshoot.md#limitations-of-windows-containers-for-localhost-and-published-ports)
-
-## Troubleshooting
-
-If you run into trouble running Windows containers, take a look at <https://docs.microsoft.com/virtualization/windowscontainers/troubleshooting>
-
-## License
-
-MIT - for more details see, the [LICENSE](./LICENSE) file.

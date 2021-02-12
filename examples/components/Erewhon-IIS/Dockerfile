@@ -58,7 +58,7 @@ New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"C:
 HEALTHCHECK --interval=20s --timeout=10s `
     CMD powershell -command `
         try { `
-            $response = Invoke-WebRequest -Uri "http://localhost/JadeRestSite/jadehttp.dll?Status_Request" -UseBasicParsing -ErrorAction Stop; `
+            $response = Invoke-WebRequest -Uri "http://localhost:6109/JadeRestSite/jadehttp.dll?Status_Request" -UseBasicParsing -ErrorAction Stop; `
             $StatusCode = $Response.StatusCode; `
         } `
         catch { `
