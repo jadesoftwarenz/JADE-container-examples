@@ -53,5 +53,3 @@ az aks get-credentials `
 
 kubectl get nodes
 kubectl get pods --all-namespaces
-
-kubectl apply -f https://raw.githubusercontent.com/PacktPublishing/Hands-On-Kubernetes-on-Windows/master/Chapter04/06_windows-example/windows-example.yaml --record
