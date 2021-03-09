@@ -43,7 +43,7 @@ services:
       - ${IISLogPath:-C:\jade\iis_logs}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
       - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
     ports:
-      - "6109:80"  
+      - "6109:6109"  
     networks:
       - jade-net
 

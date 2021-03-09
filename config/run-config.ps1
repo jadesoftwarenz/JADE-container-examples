@@ -27,4 +27,3 @@ $regKey1="C7B23D8ACEBEB2B0A6B2B0B39085B2B2"
 $regKey2=""
 # RPS key
 $regKey3=""
-

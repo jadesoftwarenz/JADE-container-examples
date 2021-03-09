@@ -5,8 +5,10 @@ Import-Module BitsTransfer
 
 $rootPath = (Split-Path $PSScriptRoot)
 $configDirectory = $rootPath + "/config/"
+$utilityFunctions = "$rootPath/common/utility.ps1"
 
 . ($configDirectory + "run-config.ps1")
+. ($utilityFunctions)
 
 $binaryRepoDirectory = "$rootPath\binaryRepo"
 $binArchive = "JADE-$jadeVersion-x64-$config-binaries.zip"
@@ -25,13 +27,13 @@ function DownloadFile {
             [string]$dest
       )
       try {
-            Write-Host "downloading $dest ..."
+            Write-Output "downloading $dest ..."
             Start-BitsTransfer -Source $source -Destination $binaryRepoDirectory\$dest -ErrorAction Stop
-            Write-Host "$dest downloaded." -ForegroundColor blue
+            Write-FormattedOutput "$dest downloaded." -ForegroundColor blue
       }
       catch {
-            Write-Host $error -ForegroundColor red
-            Write-Host "$dest download failed." -ForegroundColor red
+            Write-FormattedOutput $error -ForegroundColor red
+            Write-FormattedOutput "$dest download failed." -ForegroundColor red
             Exit 1 
       }
 }
@@ -46,13 +48,13 @@ function ApplyLicence {
       if ($proc.ExitCode -ne 0)
       {
             $result = $proc.ExitCode
-            Write-Host "Licence operation failed, error code=$result" -ForegroundColor red
+            Write-Error "Licence operation failed, error code=$result"
             Exit 1 
       }
 }
 
 $startTime = Get-Date 
-Write-Host "Installing an empty $config database and client binaries on container host: $hostName." -ForegroundColor Yellow
+Write-FormattedOutput "Installing an empty $config database and client binaries on container host: $hostName." -ForegroundColor Yellow
 
 $error.clear()
 if (!(Test-Path $localBinArchive -PathType leaf)) {
@@ -90,15 +92,15 @@ try {
       }
 
       if ((Test-Path "$jadeDatabaseDirectory\_control.dat" -PathType leaf)) {
-            Write-Host "_control.dat found in directory: $jadeDatabaseDirectory, database install skipped" -ForegroundColor Green
+            Write-Warning "_control.dat found in directory: $jadeDatabaseDirectory, database install skipped"
       }
       else {
             Expand-Archive $localDbArchive -DestinationPath $jadeDatabaseDirectory -Force
-            Write-Host "Empty $config database installed in directory: $jadeDatabaseDirectory..."
+            Write-FormattedOutput "Empty $config database installed in directory: $jadeDatabaseDirectory..." -ForegroundColor Yellow
       }
       
       Expand-Archive $localBinArchive -DestinationPath $jadeBinDirectory -Force
-      Write-Host "Client binaries installed in directory: $jadeBinDirectory"
+      Write-Output "Client binaries installed in directory: $jadeBinDirectory"
       
       # Apply licences
       ApplyLicence -name $regName -key $regKey1 # Single database or SDS primary
@@ -108,7 +110,7 @@ try {
 
       Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
   
-      Write-Host "Initialization of host resident database complete. Time elapsed:" $($(Get-Date) - $startTime) -ForegroundColor Yellow
+      Write-FormattedOutput "Initialization of host resident database complete. Time elapsed: $($(Get-Date) - $startTime)" -ForegroundColor Yellow
 }
 catch {
       Write-Error $_ -ErrorAction Continue

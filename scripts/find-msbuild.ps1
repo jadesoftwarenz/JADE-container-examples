@@ -1,3 +1,7 @@
+$rootPath = (Split-Path $PSScriptRoot)
+$utilityFunctions = "$rootPath/common/utility.ps1"
+
+. ($utilityFunctions)
 
 # Find vswhere (installed with recent Visual Studio versions).
 #
@@ -11,26 +15,26 @@ else {
     Write-Error "vswhere not found. Aborting" -ErrorAction Stop
 }
 
-Write-Host "vswhere found at: $vsWhere" -ForegroundColor Yellow
+Write-FormattedOutput "vswhere found at: $vsWhere" -ForegroundColor Yellow
     
 #
 # Get path to Visual Studio installation using vswhere.
 #
-$vsPath = &$vsWhere -latest -products * -version "[15.0,16.0)" `
+$vsPath = &$vsWhere -latest -version "[15.0,16.0)" `
     -requires Microsoft.Component.MSBuild `
     -property installationPath
 
 if ([string]::IsNullOrEmpty("$vsPath")) {
-    Write-Error "Failed to find Visual Studio 2017 installation. Aborting" -ErrorAction Stop
+    Write-Error "Failed to find Visual Studio installation. Aborting" -ErrorAction Stop
 }
 
-Write-Host "Using Visual Studio installation at: ${vsPath}" -ForegroundColor Yellow
+Write-FormattedOutput "Using Visual Studio installation at: ${vsPath}" -ForegroundColor Yellow
   
 #
 # Make sure the Visual Studio Command-Line variables are set
 #
 if (Test-Path env:LIBPATH) {
-    Write-Host "Visual Studio Command-Line variables already set" -ForegroundColor Yellow
+    Write-FormattedOutput "Visual Studio Command-Line variables already set" -ForegroundColor Yellow
 }
 else {
     # Load VC vars
@@ -41,5 +45,5 @@ else {
         }
     }
     Pop-Location
-    Write-Host "Visual Studio Command Prompt variables set." -ForegroundColor Yellow
+    Write-FormattedOutput "Visual Studio Command Prompt variables set." -ForegroundColor Green
 }

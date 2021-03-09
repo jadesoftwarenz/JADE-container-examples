@@ -1,7 +1,10 @@
 & $PSScriptRoot\..\Erewhon-Example-1-LoadData\deploy.ps1
+$rootPath = Split-Path (Split-Path $PSScriptRoot)
+write-Host $rootPath
+$utilityFunctions = "$rootPath/common/utility.ps1"
+. ($utilityFunctions)
 
-
-Write-Host "Building Web Services Images..." -ForegroundColor Yellow
+Write-FormattedOutput "Building Web Services Images..." -ForegroundColor Yellow
 try {
     & $PSScriptRoot\build-images.ps1
 }
@@ -10,7 +13,7 @@ catch {
     exit 1
 }
 
-Write-Host "Deploying Web Services Containers..." -ForegroundColor Yellow
+Write-FormattedOutput "Deploying Web Services Containers..." -ForegroundColor Yellow
 try {
     & $PSScriptRoot\deploy.ps1
 }
@@ -19,4 +22,4 @@ catch {
     exit 1
 }
 
-Write-Host "Erewhon System Ready!" -ForegroundColor Yellow
+Write-FormattedOutput "Erewhon System Ready!" -ForegroundColor Yellow
