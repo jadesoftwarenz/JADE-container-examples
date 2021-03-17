@@ -27,6 +27,7 @@ services:
   erewhon-webshop:
     depends_on: 
       - jade-rap
+      - iis-server
     image: erewhon/webshop:v1
     volumes:
       - ${ImagesPath:-c:\jade\images}:c:\temp
