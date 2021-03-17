@@ -24,7 +24,7 @@ if ((Test-Path "$jadeDatabaseDirectory\eredef.dat" -PathType leaf)) {
     # Chill until the rap starts.
     while (!(docker exec jade-database-server powershell Test-NetConnection jade-rap -port 9901)) {
         Write-FormattedOutput "Waiting for rap to start..."
-        Start-Sleep -Seconds 1
+        Start-Sleep -Seconds 3
     }
 
     try {
