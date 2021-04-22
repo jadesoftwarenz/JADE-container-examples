@@ -1,6 +1,12 @@
 # Getting Started with JADE containers
+## Setup for Windows Server Editions
 
-## Docker Desktop for Windows
+To run containers on Windows Server, you need a physical server or virtual machine running Windows Server (Semi-Annual Channel), Windows Server 2019, or Windows Server 2016.
+
+For details on how to install a Docker runtime on windows Server, see the Microsoft tutorial at
+(https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-Server)
+
+## Docker Desktop for Windows 10
 
 Docker Desktop for Windows is Docker designed to run on Windows 10. It is a native Windows application that provides an easy-to-use development environment for building, shipping, and running containerized services. Docker Desktop for Windows supports running both Linux and Windows Docker containers, but not at the same time.
 
