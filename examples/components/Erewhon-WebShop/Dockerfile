@@ -1,5 +1,5 @@
 # escape=`
-FROM registry.cnw.co.nz/jade/gui-client:20.0.01-x64-U
+FROM registry.jadeworld.io/jade/gui-client:20.0.01-x64-U
 
 COPY /system.ini c:/jade/
 
