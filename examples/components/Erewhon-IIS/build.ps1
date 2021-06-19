@@ -14,7 +14,7 @@ Copy-Item "$jadeBinDirectory\jadehttp.dll" -Destination "$PSScriptRoot\bin\"
 
 Push-Location $PSScriptRoot
 
-docker build -t erewhon/iis-server:v1 --network "Default Switch".
+docker build -t erewhon/iis-server:v1 .
 
 # Remove temporarily copied files from script root.
 Remove-Item -Path $PSScriptRoot/bin -Recurse
