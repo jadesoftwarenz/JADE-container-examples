@@ -20,10 +20,6 @@ $registry = "registry.jadeworld.io"
 $repoPrefix = "jade"
 
 # Default Free Licence key - Change settings to use your own licence and keys
-$regName="JADE Container World"
-# Database or SDS primary key
-$regKey1="C7B23D8ACEBEB2B0A6B2B0B39085B2B2"
-# SDS secondary key
-$regKey2=""
-# RPS key
-$regKey3=""
+$licenceName="JADE Container World"
+# a single or several comma separated keys, format: $licenceKeys="key1,key2,key3". 
+$licenceKeys="C7B23D8ACEBEB2B0A6B2B0B39085B2B2"
