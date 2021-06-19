@@ -43,7 +43,7 @@ There are several ways to deploy or run containers. In the first step of this ex
 Just so that we can see another way, run the following PowerShell command:
 
 ```powershell
-docker run -d -p 443:9907 --name jade-app-server --volume C:\jade\logs:C:\logs --network "nat" registry.jadeworld.io/jade/application-server:20.0.01-x64-U
+docker run -d -p 443:9907 --name jade-app-server --volume c:\Erewhon\logs:c:\jade\logs  registry.jadeworld.io/jade/application-server:20.0.01-x64-U
 ```
 
 This will download and deploy the application server image from the JADE registry, bind port 443 on the host to port 9907 in the container, and bind the directory __C:\Erewhon\logs__ to the logs directory in the container - this will allow you to view the logs generated in the container on the host. (If your database is located elsewhere than __c:\Erewehon\jade__, change that part of the path as required.)

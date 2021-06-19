@@ -38,9 +38,10 @@ services:
       - ${IISLogPath:-c:\Erewhon\iis_logs}:c:\inetpub\logs\FailedReqLogFiles\W3SVC1
       - ${IISLogPath:-c:\Erewhon\iis_logs}:c:\bin_jadehttp\logs
     ports:
-      - "6109:6109"  
+      - "6109:6109"
 
 networks:
   default:
-    external: true  
+    external: true
     name: nat
+
