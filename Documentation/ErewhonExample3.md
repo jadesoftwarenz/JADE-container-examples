@@ -16,7 +16,7 @@ If you have done the [Erewhon Example 1](./ErewhonExample1), you will have alrea
 
 You can now run the __\examples\Erewhon-Example-3-WebShop\demo.ps1__ script.
 
-The __demops1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a free licence to it. It will then load the Erewhon schemas into the database and import the example data. Finally, it will build an IIS image and start up containers for the IIS service, the database server, and the Erewhon WebShop application. Before each step it will check if the step has already been done, and only perform that step if needed.
+The __demo.ps1__ script will generate a database at the path specified in the __$jadeRootDirectory__ variable and apply a  licence to it. It will then load the Erewhon schemas into the database and import the example data. Finally, it will build an IIS image and start up containers for the IIS service, the database server, and the Erewhon WebShop application. Before each step it will check if the step has already been done, and only perform that step if needed.
 
 Once the containers are set up and running, you can access the Erewhon WebShop as follows:
 
@@ -63,11 +63,11 @@ This HEALTHCHECK will perform a PowerShell command every 20 seconds, and allow 1
 
 We will also need to extend it to define the ENTRYPOINT, which has the following parts:
 
-- c:/bin/jade.exe - What we're actually running. Note this is the path *inside* the container, not on the host.
-- ini=c:/system.ini - Again, this is inside the container not on the host.
-- path=c:/system - This is inside the container, but will also be mapped to a folder on the host.
+- c:/jade/bin/jade.exe - The executable we are running. Note this is the path *inside* the container, not on the host.
+- ini=c:/jade/system.ini - This is inside the container not on the host.
+- path=c:/jade/system - This path will be mapped to a folder on the host.
 - jadelog.logfile=webshoplog - This will be the name of the log file for this application.
-- jadelog.logdirectory=c:/logs - This again is inside the container, but will also be mapped to a folder on the host.
+- jadelog.logdirectory=c:/jade/logs - This will be mapped to a folder on the host.
 - server=remoteServer - Specifies that the Database Server is remote (since it's in a different container).
 - schema=ErewhonInvestmentsViewSchema - The schema which contains the application we want to run.
 - app=WebShop - The application we want to run.
@@ -99,7 +99,7 @@ We'll also use the SHELL command to allow for the sending of PowerShell scripts 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 ```
 
-Next, the image will need a __\bin\\__ directory and a __\bin_jadehttp\\__ directory. The __\bin\\__ directory doesn't need to be the full \bin\ of a JADE Database, it only needs the __jadehttp.dll__ file - this is the one that knows what to do with the web requests when they are to be handled by JADE. Specifically, it will read the __jadehttp.ini__ file in the __\bin_jadehttp\\__ folder and determine what port to forward the request to based on the name of the application in the query string of the request. We have to use a relative path for this, because when a dockerfile is being run with a docker build command, the first thing it will do is copy the directory into the docker daemon, and therefore only the files in the directory are available. We also want to make sure we have the latest version of __jadehttp.dll__, so this file will be copied in from the bin directory of the JADE database specified earlier in the __$jadeRootDirectory__ variable.
+Next, the image will need a __\bin\\__ directory and a __\bin_jadehttp\\__ directory. The __\bin\\__ directory doesn't need to be the full \bin\ of a JADE Database, it only needs the __jadehttp.dll__ file - this is the one that knows what to do with the web requests when they are to be handled by JADE. Specifically, it will read the __jadehttp.ini__ file in the __\bin_jadehttp\\__ folder and determine what port to forward the request to based on the name of the application in the query string of the request. We have to use a relative path for this, because when a dockerfile is being processed with a docker build command, the first thing it will do is copy the directory into the docker daemon, and therefore only the files in the directory are available. We also want to make sure we have the latest version of __jadehttp.dll__, so this file will be copied in from the bin directory of the JADE database specified earlier in the __$jadeRootDirectory__ variable.
 
 ```dockerfile
 COPY /bin/ c:/bin/
@@ -124,7 +124,7 @@ Install-WindowsFeature Web-Http-Tracing; `
 Enable-WebRequestTracing -Name \"Default Web Site\"
 ```
 
-We also need to install vc_redist (The Visual C++ Redistributable) on the container because as of JADE2020, the __jadehttp.dll__ requires it. This is part of the base image used in the previous dockerfiles, but Windows Server Core does not include it.
+We also need to install vc_redist (The Visual C++ Redistributable) on the container because as of JADE 2020, the __jadehttp.dll__ requires it. This is part of the base image used in the previous dockerfiles, but Windows Server Core does not include it.
 
 ```dockerfile
 COPY vc_redist.x64.exe /
@@ -218,7 +218,7 @@ ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"]
 
 When running this Dockerfile, if we look at the __\examples\components\Erewhon-IIS\build-iis.ps1__ script, we can see that there's a bit more to it than simply doing a docker build. As well as ensuring the global config has been set, there are three additional steps before we do the docker build:
 
-There are some artefacts that will be needed for the IIS container but when using a dockerfile, only the dockerfile's directory is available to the docker daemon (the process that creates the container image). As such, we will temporarily copy them to the directory then remove them again at the end once we're finished:
+There are some artifacts that will be needed for the IIS container but when using a dockerfile, only the dockerfile's directory is available to the docker daemon (the process that creates the container image). As such, we will temporarily copy them to the directory then remove them again at the end once we're finished:
 
 ```powershell
 # Copy files temporarily to script root for use in dockerfile
@@ -248,7 +248,7 @@ Once these three steps are done, we then can do the docker build:
 docker build -t erewhon/iis-server:v1 .
 ```
 
-And finally, the artefacts we copied to the script directory should be removed when we're finished:
+And finally, the artifacts we copied to the script directory should be removed when we're finished:
 
 ```powershell
 # Remove temporarily copied files from script root.
@@ -271,7 +271,7 @@ The __erewhon-webshop__ container will use the __erewhon/webshop:v1__ image we p
 
 - The images folder in the JADE database directory on the host to __c:\temp__ in the container. This is the images cache directory that is specified in the Erewhon WebShop application, so when an image is cached by the application it will be saved in the images directory of the host. This will be useful so that the IIS container can pick them up and display them in the browser.
 
-- The JADE database logs directory on the host to the __c:\logs__ directory in the container. This just allows us to easily view any logs generated by the WebShop application from the host.
+- The JADE database logs directory on the host to the __c:\jade\logs__ directory in the container. This just allows us to easily view any logs generated by the WebShop application from the host.
 
 It will also bind port 6107 on the host to port 6107 in the container - any request on port 6107 on the host will be forwarded to port 6107 in the container, which is the port that the Erewhon WebShop application is expecting requests on.
 
