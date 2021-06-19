@@ -24,9 +24,9 @@ You can now run the __thin-client.ps1__ script from the __\shortcuts\\__ folder 
 
 For the manual setup, the details of [Erewhon Example 1](./ErewhonExample1) will not be repeated. If you haven't done that example already, either follow the manual instructions in [Erewhon Example 1](./ErewhonExample1) or run the __\examples\Erewhon-Example-1-LoadData\deploy.ps1 script__.
 
-### Deploying the host database to a container
+### Deploying the host database
 
-Now that we have a database, we want to run it in its own container. To start the container running a database server, we can use the __examples\Database-Server-Container\deploy.ps1__ script. This uses docker-compose to start the container described in the __docker-compose.yml__ file in the same folder.
+Now that we have a database, we want to run it in its own container. To start the container running a database server, we can use the __examples\Database-Server-Container\deploy.ps1__ script. This uses docker compose to start the container described in the __docker-compose.yml__ file in the same folder.
 
 If we inspect this __docker-compose.yml__ we can see what it's doing:
 The container's name is specified as 'jade-rap', and under this heading are the following headings.
@@ -36,9 +36,9 @@ The container's name is specified as 'jade-rap', and under this heading are the 
 - ports: Maps a port on the host to a port on the container - when the host gets a request on the port 9901, it will forward it to the container who will receive it on its port 9901.
 - networks: This creates a 'fake' network, allowing the containers to act like they are part of a network. This should be the same for each container.
 
-### Deploying an application server to a container with docker run
+### Deploying an application server with docker run
 
-There are two ways to deploy a container. In the first step of this example we used a __docker-compose.yml__ file and the ```powershell docker-compose up -d``` command.
+There are two ways to deploy a container. In the first step of this example we used a __docker-compose.yml__ file and the ```powershell docker compose up -d``` command.
 
 Just so that we can see the other way, run the following PowerShell command:
 
@@ -50,7 +50,7 @@ This will download and deploy the application server image from the JADE registr
 
 To verify that the application server is up and running, you can run the __\scripts\thin-client.ps1__ to connect to it with a thin client.
 
-### Deploying both servers to containers with one docker-compose
+### Deploying both servers using docker compose
 
 If we want to start both containers with one step, we can define multiple containers in a single __docker-compose.yml__ file and run it using the __\examples\Erewhon-Example-2-Appserver\deploy.ps1__ script.
 
@@ -89,5 +89,5 @@ You may like to try any of the following.
 - You can display logs from both containers, including events written to the  jommsg log and the windows event log. To do this, from a PowerShell, run:
 
 ```powershell
-docker-compose logs
+docker compose logs
 ```

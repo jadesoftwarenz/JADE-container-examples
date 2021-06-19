@@ -72,7 +72,7 @@ To build the image from the dockerfile, from a PowerShell, run the following fro
 docker build -t erewhon-rest .
 ```
 
-We now have the image, and need to start the container. We again can do this either with a docker-compose or a docker run.
+We now have the image, and need to start the container. We again can do this either with a docker compose or a docker run.
 
 To start the container using docker run, execute the following PowerShell command (if you changed your database directory, change __c:\jade__ to your database directory):
 
@@ -80,10 +80,10 @@ To start the container using docker run, execute the following PowerShell comman
 docker run -d -p 6008:6008 --name jade-erewhon-rest --network="nat" --volume c:\jade\images:c:\temp --volume c:\jade\logs:c:\logs erewhon-rest
 ```
 
-To start the container using docker-compose, from a PowerShell run the following from the __\examples\components\Erewhon-REST__ folder:
+To start the container using docker compose, from a PowerShell run the following from the __\examples\components\Erewhon-REST__ folder:
 
 ```powershell
-docker-compose up -d
+docker compose up -d
 ```
 
 We now should have four containers running:

@@ -6,7 +6,7 @@ $appServerListenPort = 443
 $dbServerPortBind = "9901:9901"
 $appServerPortBind = "443:9907"
 
-$jadeRootDirectory = "c:\jade"
+$jadeRootDirectory = "c:\Erewhon"
 $jadeBinDirectory = $jadeRootDirectory + "\bin"
 $jadeLogDirectory = $jadeRootDirectory + "\logs"
 $jadeDatabaseDirectory = $jadeRootDirectory + "\system"

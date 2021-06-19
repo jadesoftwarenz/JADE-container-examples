@@ -51,10 +51,10 @@ To start the database and application servers:
 - Run the __deploy.ps1__ script from the __/examples/compose-example1/__ folder.
 
 You may want to verify that the database and application server containers are running. To do so, from a PowerShell, run:
-__docker-compose ps__. You should see two containers running.
+__docker compose ps__. You should see two containers running.
 
 ```powershell
-> docker-compose ps
+> docker compose ps
                Name                             Command                  State               Ports
 -----------------------------------------------------------------------------------------------------------
 compose-example1_jade-app-server_1   c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:443->9907/tcp
@@ -80,7 +80,7 @@ You may like to try any of the following.
 - You can start the Erewhon Shop using the __run-erewhon-shop.ps1__ script in the __/examples/Erewhon/__ folder.
 - You can display logs from both containers, including events written to the  jommsg log and the windows event log. To do this, from a PowerShell, run:
 
-> docker-compose logs
+> docker compose logs
 
 ## Cleanup
 
@@ -98,7 +98,7 @@ If you had a JADE database created for use with this demo, either by running the
 
 To do the same process as the __remove-images.ps1__ script manually, you can perform the following steps.
 
-> docker-compose down
+> docker compose down
 
 - The containers are now stopped and removed. However, there are still container images saved on your computer. If you want to remove these also, from an admin PowerShell, run:
 

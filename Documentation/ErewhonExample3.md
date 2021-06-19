@@ -259,11 +259,11 @@ Remove-Item "VC_redist.x64.exe"
 
 ### Deploying the containers
 
-Now that we've built images for the WebShop application and IIS server containers, we can use a docker-compose to deploy both containers and a database server together.
+Now that we've built images for the WebShop application and IIS server containers, we can use docker compose to deploy both containers and a database server together.
 
-As in the previous example, the __\examples\Erewhon-example-3-WebShop\\__ folder contains a __docker-compose.yml__.
+As in the previous example, the __\examples\Erewhon-example-3-WebShop\\__ folder contains a compose file:  __docker-compose.yml__.
 
-The docker compose specifies three services (containers): __jade-rap__, __erewhon-webshop__, and __iis-server__.
+The docker compose file specifies three services (containers): __jade-rap__, __erewhon-webshop__, and __iis-server__.
 
 The __jade-rap__ container is exactly the same as the one specified in the __\examples\Database-Server-Container\\__ __docker-compose.yml__ file.
 
@@ -286,7 +286,7 @@ The __erewhon-iis__ container will use the __erewhon/iis-server:v1__ image we pr
 To start the containers, from the __\examples\Erewhon-example-3-WebShop__ folder, either run the __deploy.ps1__ script or run the following Powershell commands:
 
 ```powershell
-docker-compose up -d
+docker compose up -d
 ```
 
 To make sure everything's working, in a web browser, navigate to the following:
