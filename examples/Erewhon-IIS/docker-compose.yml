@@ -3,15 +3,13 @@ services:
   iis-server:
     image: erewhon/iis-server:v1
     volumes:
-      - ${ImagesPath:-c:\jade\images}:c:\temp
-      - ${IISLogPath:-C:\jade\iis_logs}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
-      - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
+      - ${ImagesPath:-c:\Erewhon\images}:c:\temp
+      - ${IISLogPath:-c:\Erewhon\iis_logs}:c:\inetpub\logs\FailedReqLogFiles\W3SVC1
+      - ${IISLogPath:-c:\Erewhon\iis_logs}:c:\bin_jadehttp\logs
     ports:
       - "6109:80"  
-    networks:
-      - jade-net
-      
+
 networks:
-  jade-net:
-    external:
-      name: nat
+  default:
+    external: true  
+    name: nat

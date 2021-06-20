@@ -18,5 +18,5 @@ $env:RapListenPort = 9901
 $env:AppServerListenPort = 443
 
 Push-Location $PSScriptRoot
-docker-compose up -d 
+docker compose up -d 
 Pop-Location

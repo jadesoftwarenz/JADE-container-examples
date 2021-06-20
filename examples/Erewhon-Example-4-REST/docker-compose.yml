@@ -3,14 +3,12 @@ services:
   jade-rap:
     image: ${Registry:-}/jade/database-server:${Tag:-20.0.01-x64-U}
     volumes:
-      - ${DatabasePath:-c:\jade\system}:c:\system
-      - ${JournalPath:-c:\jade\journals}:c:\journals
-      - ${LogPath:-c:\jade\logs}:c:\logs
-      - ${DumpsPath:-c:\jade\ProcessDumps}:c:\ProcessDumps
+      - ${DatabasePath:-c:\Erewhon\system}:c:\jade\system
+      - ${JournalPath:-c:\Erewhon\journals}:c:\jade\journals
+      - ${LogPath:-c:\Erewhon\logs}:c:\jade\logs
+      - ${DumpsPath:-c:\Erewhon\ProcessDumps}:c:\jade\ProcessDumps
     ports:
       - "${RapListenPort:-9901}:9901"
-    networks:
-      - jade-net
 
   jade-app-server:
     image: ${Registry:-}/${RepoPrefix:-}/application-server:${Tag:-20.0.01-x64-U}
@@ -18,11 +16,9 @@ services:
     depends_on: 
       - jade-rap
     volumes:
-      - ${LogPath:-c:\jade\logs}:c:\logs
+      - ${LogPath:-c:\Erewhon\logs}:c:\jade\logs
     ports:
       - "${AppServerListenPort:-443}:9907"
-    networks:
-      - jade-net
 
   erewhon-webshop:
     depends_on: 
@@ -30,12 +26,10 @@ services:
       - iis-server
     image: erewhon/webshop:v1
     volumes:
-      - ${ImagesPath:-c:\jade\images}:c:\temp
-      - ${LogPath:-c:\jade\logs}:c:\logs
+      - ${ImagesPath:-c:\Erewhon\images}:c:\temp
+      - ${LogPath:-c:\Erewhon\logs}:c:\jade\logs
     expose:
       - "6107"
-    networks:
-      - jade-net
 
   erewhon-rest:
     depends_on: 
@@ -43,25 +37,23 @@ services:
       - iis-server
     image: erewhon/rest-api:v1
     volumes:
-      - ${ImagesPath:-c:\jade\images}:c:\temp
-      - ${LogPath:-c:\jade\logs}:c:\logs
+      - ${ImagesPath:-c:\Erewhon\images}:c:\temp
+      - ${LogPath:-c:\Erewhon\logs}:c:\jade\logs
     expose:
       - "6108"
-    networks:
-      - jade-net
   
   iis-server:
     image: erewhon/iis-server:v1
     volumes:
-      - ${ImagesPath:-c:\jade\images}:c:\temp
-      - ${IISLogPath:-C:\jade\iis_logs\FailedReqLogFiles}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
-      - ${IISLogPath:-C:\jade\iis_logs}:C:\bin_jadehttp\logs
+      - ${ImagesPath:-c:\Erewhon\images}:c:\temp
+      - ${IISLogPath:-c:\Erewhon\iis_logs\FailedReqLogFiles}:C:\inetpub\logs\FailedReqLogFiles\W3SVC1
+      - ${IISLogPath:-c:\Erewhon\iis_logs}:C:\bin_jadehttp\logs
     ports:
       - "6109:6109"  
-    networks:
-      - jade-net
 
 networks:
-  jade-net:
-    external:
-      name: nat
+  default:
+    external: true  
+    name: nat
+
+      

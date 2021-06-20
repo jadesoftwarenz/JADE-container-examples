@@ -3,14 +3,12 @@ services:
   erewhon-rest:
     image: erewhon/rest-api:v1
     volumes:
-      - ${ImagesPath:-c:\jade\images}:c:\temp
-      - ${LogPath:-c:\jade\logs}:c:\logs
+      - ${ImagesPath:-c:\Erewhon\images}:c:\temp
+      - ${LogPath:-c:\Erewhon\logs}:c:\jade\logs
     expose:
       - "6108"
-    networks:
-      - jade-net
       
 networks:
-  jade-net:
-    external:
-      name: nat
+  default:
+    external: true  
+    name: nat

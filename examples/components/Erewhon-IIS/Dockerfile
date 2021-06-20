@@ -52,8 +52,8 @@ Set-WebConfiguration "/system.webServer/handlers/@AccessPolicy" -value \"Read, S
 
 RUN Set-WebBinding -Name 'Default Web Site' -BindingInformation "*:80:" -PropertyName Port -Value 6109
 
-RUN New-Item -Path \"C:\Temp\" -ItemType directory; `
-New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"C:\Temp\"
+RUN New-Item -Path \"c:\Temp\" -ItemType directory; `
+New-WebVirtualDirectory -Site 'Default Web Site' -Name images -PhysicalPath \"c:\Temp\"
 
 HEALTHCHECK --interval=20s --timeout=10s `
     CMD powershell -command `

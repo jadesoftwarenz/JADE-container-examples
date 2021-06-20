@@ -11,7 +11,7 @@ $command = "$jadeBinDirectory\$tool"
 
 $serverNetworkSpec = """TcpIpv4,$hostName,$dbServerListenPort"""
 
-& $command path=c:\system ini="$configDirectory\system.ini" `
+& $command path=c:\jade\system ini="$configDirectory\system.ini" `
     jadelog.logdirectory=$jadelogDirectory jadelog.logfile="dataload" `
     jadeclient.ServerNodeSpecifications=$serverNetworkSpec  `
     schema= ErewhonInvestmentsModelSchema app=DataLoader `

@@ -10,5 +10,5 @@ $setEnvVars = $configDirectory + "\set-env-vars.ps1"
 & $PSScriptRoot\..\Erewhon-Example-2-AppServer\stop.ps1
 
 Push-Location $PSScriptRoot
-docker-compose up -d
+docker compose up -d
 Pop-Location

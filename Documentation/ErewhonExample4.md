@@ -12,6 +12,7 @@ If you have completed [Erewhon Example 1](./ErewhonExample1), you will have alre
 >
 > - Modify the __run-config.ps1__ script in the __\examples\config\\__ folder:
 >   - Set the __$jadeRootDirectory__ variable to the path where you want the database generated.
+>   - Change __$licenceName__ and __$licenceKeys__ if you want to use your own. A free licence key is defined as a default.
 
 You can now run the __demo.ps1__ script from the __\examples\Erewhon-example-4-REST\\__ folder.
 
@@ -72,18 +73,18 @@ To build the image from the dockerfile, from a PowerShell, run the following fro
 docker build -t erewhon-rest .
 ```
 
-We now have the image, and need to start the container. We again can do this either with a docker-compose or a docker run.
+We now have the image, and need to start the container. We again can do this either with a docker compose or a docker run.
 
-To start the container using docker run, execute the following PowerShell command (if you changed your database directory, change __c:\jade__ to your database directory):
+To start the container using docker run, execute the following PowerShell command (if you changed your database directory, change __c:\Erewhon__ to your database home directory):
 
 ```powershell
-docker run -d -p 6008:6008 --name jade-erewhon-rest --network="nat" --volume c:\jade\images:c:\temp --volume c:\jade\logs:c:\logs erewhon-rest
+docker run -d -p 6008:6008 --name jade-erewhon-rest --network="nat" --volume c:\Erewhon\images:c:\temp --volume c:\Erewhon\logs:c:\jade\logs erewhon-rest
 ```
 
-To start the container using docker-compose, from a PowerShell run the following from the __\examples\components\Erewhon-REST__ folder:
+To start the container using docker compose, from a PowerShell run the following from the __\examples\components\Erewhon-REST__ folder:
 
 ```powershell
-docker-compose up -d
+docker compose up -d
 ```
 
 We now should have four containers running:

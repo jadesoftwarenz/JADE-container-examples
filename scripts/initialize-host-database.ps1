@@ -37,19 +37,16 @@ function DownloadFile {
             Exit 1 
       }
 }
-function ApplyLicence { 
-      param (
-            [string]$name, 
-            [string]$key
-      )
-      $arguments = "path=$jadeDatabaseDirectory ini=$jadeRootDirectory\system.ini " +
-      "jadelog.logdirectory=$jadelogDirectory jadelog.logfile=jadregb name='$name' key='$key'"
-      $proc = (Start-Process -FilePath $jadeBinDirectory/jadregb.exe -ArgumentList $arguments -PassThru -Wait -NoNewWindow)
-      if ($proc.ExitCode -ne 0)
-      {
-            $result = $proc.ExitCode
-            Write-Error "Licence operation failed, error code=$result"
-            Exit 1 
+function ApplyLicences { 
+      foreach ($key in $licenceKeys.split(",")) {
+            $arguments = "path=$jadeDatabaseDirectory ini=$jadeRootDirectory\system.ini " +
+                  "jadelog.logdirectory=$jadelogDirectory jadelog.logfile=jadregb name='$licenceName' key='$key'"
+            $proc = (Start-Process -FilePath $jadeBinDirectory/jadregb.exe -ArgumentList $arguments -PassThru -Wait -NoNewWindow)
+            if ($proc.ExitCode -ne 0) {
+                  $result = $proc.ExitCode
+                  Write-Error "Licence operation failed, error code=$result" 
+                  Exit 1 
+            }
       }
 }
 
@@ -91,22 +88,19 @@ try {
             New-Item -ItemType Directory -Force -Path $jadeIISLogsDirectory
       }
 
+      Expand-Archive $localBinArchive -DestinationPath $jadeBinDirectory -Force
+      Write-Output "Client binaries installed in directory: $jadeBinDirectory"
+
       if ((Test-Path "$jadeDatabaseDirectory\_control.dat" -PathType leaf)) {
             Write-Warning "_control.dat found in directory: $jadeDatabaseDirectory, database install skipped"
       }
       else {
             Expand-Archive $localDbArchive -DestinationPath $jadeDatabaseDirectory -Force
             Write-FormattedOutput "Empty $config database installed in directory: $jadeDatabaseDirectory..." -ForegroundColor Yellow
+            if ($null -ne $licenceKeys) {
+                  ApplyLicences
+            }
       }
-      
-      Expand-Archive $localBinArchive -DestinationPath $jadeBinDirectory -Force
-      Write-Output "Client binaries installed in directory: $jadeBinDirectory"
-      
-      # Apply licences
-      ApplyLicence -name $regName -key $regKey1 # Single database or SDS primary
-      # Uncomment these if you have SDS primary and secondary keys
-      # ApplyLicence -name $regName -key $regKey2 # SDS native secondary
-      # ApplyLicence -name $regName -key $regKey3 # RPS secondary
 
       Copy-Item -Path "${configDirectory}$iniFile"  -Destination $jadeRootDirectory
   
