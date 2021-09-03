@@ -19,7 +19,8 @@ HEALTHCHECK --interval=20s --timeout=10s `
         }
 
 # define the entrypoint process
-ENTRYPOINT c:/LogMonitor/LogMonitor.exe powershell c:/jade/bin/jadclient.exe `
+ENTRYPOINT c:/jade/bin/jadclient.exe `
 ini=c:/jade/system.ini, path=c:/jade/system, `
+jadeLog.UseLogServer=true, jadeLog.LogServer=Console `
 jadelog.logfile=erewhon_rest_service, jadelog.logdirectory=c:/jade/logs server=remoteServer `
 schema=ErewhonInvestmentsViewSchema app=ErewhonRestApp server=remoteServer

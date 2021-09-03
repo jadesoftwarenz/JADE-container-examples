@@ -55,10 +55,9 @@ __docker compose ps__. You should see two containers running.
 
 ```powershell
 > docker compose ps
-               Name                             Command                  State               Ports
------------------------------------------------------------------------------------------------------------
-compose-example1_jade-app-server_1   c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:443->9907/tcp
-compose-example1_jade-rap_1          c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:9901->9901/tcp
+NAME                   COMMAND                  SERVICE             STATUS              PORTS
+jade-app-server        "cmd /S /C c:/jade/b…"   jade-app-server     running (healthy)   0.0.0.0:443->9907/tcp
+jade-database-server   "cmd /S /C c:/jade/b…"   jade-rap            running (healthy)   0.0.0.0:9901->9901/tcp
 ```
 
 ## Load the Erewhon schemas
