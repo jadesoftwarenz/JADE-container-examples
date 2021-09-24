@@ -8,6 +8,6 @@ $globalConfig = $configDirectory + "run-config.ps1"
 
 Push-Location $PSScriptRoot
 Copy-Item "$configDirectory\system.ini" -Destination $PSScriptRoot
-docker build -t erewhon/webshop:v1 .
+docker build -t erewhon/webshop:v2 .
 Remove-Item "system.ini"
 Pop-Location

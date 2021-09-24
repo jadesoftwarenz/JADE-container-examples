@@ -15,7 +15,7 @@ $binArchive = "JADE-$jadeVersion-x64-$config-binaries.zip"
 $dbArchive = "JADE-$jadeVersion-$config-db.zip"
 $localBinArchive = "$binaryRepoDirectory\$binArchive"
 $localDbArchive = "$binaryRepoDirectory\$dbArchive"
-$baseDownloadUrl = "https://secure.jadeworld.com/JADETech/latest/20.0.01-U"
+$baseDownloadUrl = "https://secure.jadeworld.com/JADETech/latest/20.0.02-U"
 
 if (!(Test-Path $binaryRepoDirectory)) {
       New-Item -ItemType Directory -Force -Path $binaryRepoDirectory

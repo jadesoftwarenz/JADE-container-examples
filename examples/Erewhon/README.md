@@ -55,10 +55,9 @@ __docker compose ps__. You should see two containers running.
 
 ```powershell
 > docker compose ps
-               Name                             Command                  State               Ports
------------------------------------------------------------------------------------------------------------
-compose-example1_jade-app-server_1   c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:443->9907/tcp
-compose-example1_jade-rap_1          c:/LogMonitor/LogMonitor.e ...   Up (healthy)   0.0.0.0:9901->9901/tcp
+NAME                   COMMAND                  SERVICE             STATUS              PORTS
+jade-app-server        "cmd /S /C c:/jade/b…"   jade-app-server     running (healthy)   0.0.0.0:443->9907/tcp
+jade-database-server   "cmd /S /C c:/jade/b…"   jade-rap            running (healthy)   0.0.0.0:9901->9901/tcp
 ```
 
 ## Load the Erewhon schemas
@@ -102,6 +101,6 @@ To do the same process as the __remove-images.ps1__ script manually, you can per
 
 - The containers are now stopped and removed. However, there are still container images saved on your computer. If you want to remove these also, from an admin PowerShell, run:
 
-> docker rmi jaderegistry.azurecr.io/jade/application-server:20.0.01-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/application-server:20.0.02-x64-U
 
-> docker rmi jaderegistry.azurecr.io/jade/database-server:20.0.01-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/database-server:20.0.02-x64-U

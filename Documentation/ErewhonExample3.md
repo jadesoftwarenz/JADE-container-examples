@@ -35,7 +35,7 @@ In order to run the Erewhon WebShop application in a container we'll need to fir
 An example Dockerfile can be found at __\examples\components\Erewhon-WebShop\Dockerfile__. The base image we're using is:
 
 ```Dockerfile
-FROM registry.jadeworld.io/jade/jade/gui-client:20.0.01-x64-U
+FROM registry.jadeworld.io/jade/jade/gui-client:20.0.02-x64-U
 ```
 
 This base image is used for any GUI application. We need it to be GUI because Web Service Jade Forms applications require GUI functionality to generate the HTML based on the form.
@@ -245,7 +245,7 @@ Copy-Item "$jadeBinDirectory\jadehttp.dll" -Destination "$PSScriptRoot\bin\"
 Once these three steps are done, we then can do the docker build:
 
 ```powershell
-docker build -t erewhon/iis-server:v1 .
+docker build -t erewhon/iis-server:v2 .
 ```
 
 And finally, the artifacts we copied to the script directory should be removed when we're finished:
@@ -267,7 +267,7 @@ The docker compose file specifies three services (containers): __jade-rap__, __e
 
 The __jade-rap__ container is exactly the same as the one specified in the __\examples\Database-Server-Container\\__ __docker-compose.yml__ file.
 
-The __erewhon-webshop__ container will use the __erewhon/webshop:v1__ image we prepared earlier, and bind two volumes:
+The __erewhon-webshop__ container will use the __erewhon/webshop:v2__ image we prepared earlier, and bind two volumes:
 
 - The images folder in the JADE database directory on the host to __c:\temp__ in the container. This is the images cache directory that is specified in the Erewhon WebShop application, so when an image is cached by the application it will be saved in the images directory of the host. This will be useful so that the IIS container can pick them up and display them in the browser.
 
@@ -275,7 +275,7 @@ The __erewhon-webshop__ container will use the __erewhon/webshop:v1__ image we p
 
 It will also bind port 6107 on the host to port 6107 in the container - any request on port 6107 on the host will be forwarded to port 6107 in the container, which is the port that the Erewhon WebShop application is expecting requests on.
 
-The __erewhon-iis__ container will use the __erewhon/iis-server:v1__ image we prepared earlier, and bind three volumes:
+The __erewhon-iis__ container will use the __erewhon/iis-server:v2__ image we prepared earlier, and bind three volumes:
 
 - The __images__ folder in the JADE database directory on the host to __c:\temp__ in the container. This is the directory we set in the dockerfile for the virtual directory - this is where IIS will look for the images to display for the WebShop.
 

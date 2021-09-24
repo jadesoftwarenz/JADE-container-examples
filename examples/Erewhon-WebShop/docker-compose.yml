@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   erewhon-webshop:
-    image: erewhon/webshop:v1
+    image: erewhon/webshop:v2
     volumes:
       - ${ImagesPath:-c:\Erewhon\images}:c:\temp
       - ${LogPath:-c:\Erewhon\logs}:c:\jade\logs

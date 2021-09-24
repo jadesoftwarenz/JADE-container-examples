@@ -1,5 +1,5 @@
 # escape=`
-FROM registry.jadeworld.io/jade/gui-client:20.0.01-x64-U
+FROM registry.jadeworld.io/jade/gui-client:20.0.02-x64-U
 
 COPY /system.ini c:/jade/
 
@@ -18,9 +18,9 @@ HEALTHCHECK --interval=20s --timeout=10s `
             exit 1; `
         }
 
-WORKDIR c:/LogMonitor
 # define the entrypoint process
-ENTRYPOINT c:/LogMonitor/LogMonitor.exe powershell c:/jade/bin/jade.exe `
+ENTRYPOINT c:/jade/bin/jade.exe `
 ini=c:/jade/system.ini, path=c:/jade/system, `
+jadeLog.UseLogServer=true, jadeLog.LogServer=Console `
 jadelog.logfile=erewhon_web_shop, jadelog.logdirectory=c:/jade/logs server=remoteServer `
 schema=ErewhonInvestmentsViewSchema app=WebShop server=remoteServer
