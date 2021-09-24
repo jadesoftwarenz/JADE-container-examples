@@ -2,6 +2,6 @@
 
 Push-Location $PSScriptRoot
 
-docker compose up -d
+docker-compose up -d
 
 Pop-Location
