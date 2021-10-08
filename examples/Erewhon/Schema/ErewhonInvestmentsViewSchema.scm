@@ -136,25 +136,25 @@ localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 	10249 "English (Belize)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	11273 "English (Trinidad & Tobago)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	2057 "English (United Kingdom)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	3081 "English (Australia)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	4105 "English (Canada)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	6153 "English (Ireland)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	7177 "English (South Africa)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	8201 "English (Jamaica)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 	9225 "English (Caribbean)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2020:12:02:11:51:18;
+		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:25;
 translatableStringDefinitions
 	5129 "English (New Zealand)"
 	(
@@ -660,49 +660,49 @@ Any bids you have made for Tender items have been recorded, and you will be advi
 	)
 libraryDefinitions
 typeHeaders
-	ErewhonInvestmentsViewApp subclassOf ErewhonInvestmentsModelApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestSubId = 3, highestOrdinal = 9, number = 2152;
-	GErewhonInvestmentsViewSchema subclassOf GErewhonInvestmentsModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2154;
-	ErewhonRestService subclassOf JadeRestService transient, transientAllowed, subclassTransientAllowed, number = 2048;
-	TestSaleItemSearch subclassOf JadeTestCase highestOrdinal = 7, number = 2153;
+	ErewhonInvestmentsViewApp subclassOf ErewhonInvestmentsModelApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestSubId = 3, highestOrdinal = 9, number = 2173;
+	GErewhonInvestmentsViewSchema subclassOf GErewhonInvestmentsModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2174;
+	ErewhonRestService subclassOf JadeRestService transient, transientAllowed, subclassTransientAllowed, number = 2175;
+	TestSaleItemSearch subclassOf JadeTestCase highestOrdinal = 7, number = 2176;
 	TestViewApp subclassOf JadeTestCase highestOrdinal = 1, number = 2208;
-	TestViewSale subclassOf JadeTestCase highestOrdinal = 4, number = 2104;
-	TestViewSaleItem subclassOf JadeTestCase highestOrdinal = 2, number = 2131;
-	TestViewRetailSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2132;
-	TestViewTenderSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2133;
-	TestViewTender subclassOf JadeTestCase number = 2155;
+	TestViewSale subclassOf JadeTestCase highestOrdinal = 4, number = 2177;
+	TestViewSaleItem subclassOf JadeTestCase highestOrdinal = 2, number = 2178;
+	TestViewRetailSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2179;
+	TestViewTenderSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2180;
+	TestViewTender subclassOf JadeTestCase number = 2181;
 	ErewhonInvestmentsService subclassOf JadeWebServiceProvider transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2261;
-	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2065;
+	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2182;
 	SaleItemSearch subclassOf Object transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 8, number = 2209;
-	SErewhonInvestmentsViewSchema subclassOf SErewhonInvestmentsModelSchema highestSubId = 3, highestOrdinal = 5, number = 2157;
-	FormBase subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2158;
-	FormAbout subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2159;
-	FormAdminApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2160;
-	FormAdminMdi subclassOf FormAdminApp transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 27, number = 2161;
-	FormMdiChild subclassOf FormAdminApp transient, transientAllowed, subclassTransientAllowed, number = 2162;
-	FormAgentClientList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 22, number = 2163;
-	FormAgentCommissionRates subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2164;
-	FormCommissionRatesList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2165;
-	FormDocumentorSetup subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestSubId = 1, highestOrdinal = 5, number = 2166;
-	FormLocationsList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 20, number = 2167;
-	FormSaleItemCategoryList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 11, number = 2168;
-	FormSaleItemList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2169;
-	FormSalesList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2170;
-	FormNonMdiChild subclassOf FormAdminApp transient, transientAllowed, subclassTransientAllowed, number = 2171;
-	FormAddressableEntity subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 25, number = 2210;
-	FormAgent subclassOf FormAddressableEntity transient, transientAllowed, subclassTransientAllowed, number = 2211;
-	FormClient subclassOf FormAddressableEntity transient, transientAllowed, subclassTransientAllowed, number = 2212;
-	FormCompany subclassOf FormAddressableEntity transient, transientAllowed, subclassTransientAllowed, number = 2213;
-	FormCommissionRate subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2214;
-	FormCountry subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2215;
-	FormFindSaleItem subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2216;
-	FormRegion subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 8, number = 2217;
-	FormSaleItem subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 26, number = 2218;
-	FormRetailSaleItem subclassOf FormSaleItem transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2219;
-	FormTenderSaleItem subclassOf FormSaleItem transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 5, number = 2220;
-	FormSaleItemCategory subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 8, number = 2221;
-	FormClientApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2222;
-	FormShopClient subclassOf FormClientApp transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 19, number = 2223;
-	FormShopCheckout subclassOf FormShopClient transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2224;
+	SErewhonInvestmentsViewSchema subclassOf SErewhonInvestmentsModelSchema highestSubId = 3, highestOrdinal = 5, number = 2183;
+	FormBase subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2184;
+	FormAbout subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2185;
+	FormAdminApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2186;
+	FormAdminMdi subclassOf FormAdminApp transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 27, number = 2187;
+	FormMdiChild subclassOf FormAdminApp transient, transientAllowed, subclassTransientAllowed, number = 2188;
+	FormAgentClientList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 22, number = 2189;
+	FormAgentCommissionRates subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2190;
+	FormCommissionRatesList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2191;
+	FormDocumentorSetup subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestSubId = 1, highestOrdinal = 5, number = 2192;
+	FormLocationsList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 20, number = 2195;
+	FormSaleItemCategoryList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 11, number = 2196;
+	FormSaleItemList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2197;
+	FormSalesList subclassOf FormMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2198;
+	FormNonMdiChild subclassOf FormAdminApp transient, transientAllowed, subclassTransientAllowed, number = 2210;
+	FormAddressableEntity subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 25, number = 2211;
+	FormAgent subclassOf FormAddressableEntity transient, transientAllowed, subclassTransientAllowed, number = 2212;
+	FormClient subclassOf FormAddressableEntity transient, transientAllowed, subclassTransientAllowed, number = 2213;
+	FormCompany subclassOf FormAddressableEntity transient, transientAllowed, subclassTransientAllowed, number = 2214;
+	FormCommissionRate subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2215;
+	FormCountry subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2216;
+	FormFindSaleItem subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2217;
+	FormRegion subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 8, number = 2218;
+	FormSaleItem subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 26, number = 2219;
+	FormRetailSaleItem subclassOf FormSaleItem transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2220;
+	FormTenderSaleItem subclassOf FormSaleItem transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 5, number = 2221;
+	FormSaleItemCategory subclassOf FormNonMdiChild transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 8, number = 2222;
+	FormClientApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2223;
+	FormShopClient subclassOf FormClientApp transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 19, number = 2224;
+	FormShopCheckout subclassOf FormShopClient transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2316;
 	FormShopConfirmation subclassOf FormShopClient transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2398;
 	FormShopSaleItems subclassOf FormShopClient transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 63, number = 2399;
 	FormWebClientApp subclassOf FormClientApp transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 21, number = 2400;
@@ -907,11 +907,7 @@ starts, therefore they cannot be debugged.`
 	)
 	JadeRestService completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2019:02:21:17:32:31.564;
- 
-	jadeMethodDefinitions
-		get() number = 1001;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2019:02:21:17:32:31.705;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2021:09:27:14:32:27.094;
 	)
 	ErewhonRestService completeDefinition
 	(
@@ -925,7 +921,7 @@ starts, therefore they cannot be debugged.`
 		getAllClients(): ClientByNameDict number = 1013;
 		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:14:38:40.954;
 		getAllSales(): SaleSet number = 1008;
-		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:14:36:33.488;
+		setModifiedTimeStamp "cnwta3" "20.0.01" 2021:09:27:14:33:07.353;
 		getClient(name: String): Client number = 1009;
 		setModifiedTimeStamp "cnwta3" "20.0.01" 2020:11:24:11:00:40.857;
 		getCompany(): Company number = 1005;
@@ -4116,7 +4112,7 @@ ErewhonInvestmentsViewSchemaDb
 	databaseFileDefinitions
 		"erecart" number = 88;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
-		"eredef" number = 54;
+		"eredef" number = 56;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions
@@ -5485,21 +5481,6 @@ end;
 }
 
 	)
-	JadeRestService (
-	jadeMethodSources
-get
-{
-get();
-
-vars
-
-begin
-
-end;
-
-}
-
-	)
 	ErewhonRestService (
 	jadeMethodSources
 getAgent
@@ -5574,9 +5555,6 @@ begin
 	app.myCompany.getAllSales(sales);
 	foreach sale in sales do
 		clone := sale.cloneSelf(true);
-		clone.setPropertyValue(Sale::mySaleItem.name, sale.mySaleItem.cloneSelf(true));
-		clone.setPropertyValue(Sale::myClient.name, sale.myClient.cloneSelf(true));
-		clone.setPropertyValue(Sale::myCompany.name, sale.myCompany.cloneSelf(true));
 		foundSales.add(clone);
 	endforeach;
 	return foundSales;
