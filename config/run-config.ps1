@@ -1,5 +1,5 @@
 # This file defines common global settings imported by powershell scripts
-$jadeVersion = "20.0.02"
+$jadeVersion = "22.0.01"
 $hostName = [System.Net.Dns]::GetHostName()
 $dbServerListenPort = 9901
 $appServerListenPort = 443

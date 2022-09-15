@@ -101,6 +101,6 @@ To do the same process as the __remove-images.ps1__ script manually, you can per
 
 - The containers are now stopped and removed. However, there are still container images saved on your computer. If you want to remove these also, from an admin PowerShell, run:
 
-> docker rmi jaderegistry.azurecr.io/jade/application-server:20.0.02-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/application-server:22.0.01-x64-U
 
-> docker rmi jaderegistry.azurecr.io/jade/database-server:20.0.02-x64-U
+> docker rmi jaderegistry.azurecr.io/jade/database-server:22.0.01-x64-U

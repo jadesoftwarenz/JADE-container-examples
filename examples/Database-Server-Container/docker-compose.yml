@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   jade-rap:
-    image: ${Registry:-}/${RepoPrefix:-}/database-server:${Tag:-20.0.02-x64-U}
+    image: ${Registry:-}/${RepoPrefix:-}/database-server:${Tag:-22.0.01-x64-U}
     container_name: "jade-database-server"
     volumes:
       - ${DatabasePath:-c:\Erewhon\system}:c:\jade\system
