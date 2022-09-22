@@ -71,6 +71,6 @@ HEALTHCHECK --interval=20s --timeout=10s `
             exit 1; `
         }
 
-EXPOSE 80
+EXPOSE 6109
 
 ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"] 

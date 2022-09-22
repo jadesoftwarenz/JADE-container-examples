@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   jade-rap:
-    image: ${Registry:-}/jade/database-server:${Tag:-20.0.02-x64-U}
+    image: ${Registry:-}/jade/database-server:${Tag:-22.0.01-x64-U}
     volumes:
       - ${DatabasePath:-c:\Erewhon\system}:c:\jade\system
       - ${JournalPath:-c:\Erewhon\journals}:c:\jade\journals
@@ -11,7 +11,7 @@ services:
       - "${RapListenPort:-9901}:9901"
 
   jade-app-server:
-    image: ${Registry:-}/${RepoPrefix:-}/application-server:${Tag:-20.0.02-x64-U}
+    image: ${Registry:-}/${RepoPrefix:-}/application-server:${Tag:-22.0.01-x64-U}
     container_name: "jade-app-server"
     depends_on: 
       - jade-rap

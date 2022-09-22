@@ -35,7 +35,7 @@ In order to run the Erewhon WebShop application in a container we'll need to fir
 An example Dockerfile can be found at __\examples\components\Erewhon-WebShop\Dockerfile__. The base image we're using is:
 
 ```Dockerfile
-FROM registry.jadeworld.io/jade/jade/gui-client:20.0.02-x64-U
+FROM registry.jadeworld.io/jade/jade/gui-client:22.0.01-x64-U
 ```
 
 This base image is used for any GUI application. We need it to be GUI because Web Service Jade Forms applications require GUI functionality to generate the HTML based on the form.

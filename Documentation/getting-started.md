@@ -1,14 +1,14 @@
 # Getting Started with JADE containers
 ## Setup for Windows Server Editions
 
-To run containers on Windows Server, you need a physical server or virtual machine running Windows Server (Semi-Annual Channel), Windows Server 2019, or Windows Server 2016.
+To run containers on Windows Server, you need a physical server or virtual machine running Windows Server (Semi-Annual Channel), Windows Server 2022, Windows Server 2019, or Windows Server 2016.
 
 For details on how to install a Docker runtime on windows Server, see the Microsoft tutorial at
 (https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-Server)
 
-## Docker Desktop for Windows 10
+## Docker Desktop for Windows 10 and 11
 
-Docker Desktop for Windows is Docker designed to run on Windows 10. It is a native Windows application that provides an easy-to-use development environment for building, shipping, and running containerized services. Docker Desktop for Windows supports running both Linux and Windows Docker containers, but not at the same time.
+Docker Desktop for Windows is Docker designed to run on Windows 10 and 11. It is a native Windows application that provides an easy-to-use development environment for building, shipping, and running containerized services. Docker Desktop for Windows supports running both Linux and Windows Docker containers, but not at the same time.
 
 Docker Desktop for Windows can use either Windows-native [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) virtualization or
 a [Windows Subsystem for Linux Version 2 (WSL 2)](https://docs.docker.com/docker-for-windows/wsl/) as a backend.
@@ -17,7 +17,7 @@ a [Windows Subsystem for Linux Version 2 (WSL 2)](https://docs.docker.com/docker
 
 ### System Requirements
 
-- Windows 10 64-bit: Pro or Enterprise (Build 16299 or later).
+- Windows 10 or 11 Professional or Enterprise with Anniversary Update (version 1607) or later.
 - BIOS-level hardware virtualization support must be enabled in your
     BIOS settings.  For more information, see [Virtualization](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled).
 
