@@ -1,5 +1,5 @@
 # escape=`
-FROM registry.jadeworld.io/jade/non-gui-client:22.0.01-x64-U
+FROM registry.jadeworld.io/jade/non-gui-client:22.0.02-x64-U
 
 COPY /system.ini c:/jade/
 
